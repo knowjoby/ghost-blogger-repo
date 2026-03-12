@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 import hashlib
+import re
 from datetime import date
 from pathlib import Path
-from typing import Iterable
-import re
+from typing import Iterable, Optional
 
 
 _URL_RE = re.compile(r"https?://[^\s)>\"]+")
@@ -19,7 +19,7 @@ def fingerprint_for_run(*, day: date, source_urls: Iterable[str]) -> str:
 def fingerprint_marker(fp: str) -> str:
     return f"<!-- ghost:fingerprint:{fp} -->"
 
-def _extract_front_matter_title(text: str) -> str | None:
+def _extract_front_matter_title(text: str) -> Optional[str]:
     if not text.startswith("---"):
         return None
     # Very small YAML subset parsing: look for a single-line `title:` in the first block.

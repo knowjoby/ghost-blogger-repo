@@ -56,6 +56,10 @@ class GhostBloggerAgent:
 
             notes = self._collect_notes(fetcher, already_seen)
             state.last_run_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            if not notes:
+                state.save(self._cfg.state.path)
+                print("No notes collected; skipping post.")
+                return
             post = self._write_post(notes)
             if post is None:
                 # Avoid repeated attempts on the same URLs when we chose not to write.

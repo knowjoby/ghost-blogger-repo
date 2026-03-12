@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import logging
 import re
+import socket
 import time
 from dataclasses import dataclass
 from functools import lru_cache
+from ipaddress import ip_address
 from typing import Iterable
 from urllib.parse import urlparse, urlunparse
 from urllib.robotparser import RobotFileParser
@@ -118,14 +120,65 @@ class SafeFetcher:
             raise PolicyError(f"Non-http(s) URL blocked: {u}")
         if p.scheme == "http" and not self._allow_http:
             raise PolicyError(f"HTTP URL blocked by policy: {u}")
+        if p.username or p.password:
+            raise PolicyError(f"Userinfo in URL blocked: {u}")
+        if p.port is not None and p.port not in {80, 443}:
+            raise PolicyError(f"Non-standard port blocked: {u}")
         h = (p.hostname or "").lower()
         if not h:
             raise PolicyError(f"URL has no hostname: {u}")
+        if not self._host_allowed(h):
+            raise PolicyError(f"Host blocked by policy: {h}")
         for d in self._disallowed_domains:
             if h == d or h.endswith("." + d):
                 raise PolicyError(f"Domain blocked by policy: {h}")
         if self._obey_robots and not self._robots_allows(u):
             raise PolicyError(f"robots.txt disallows: {u}")
+
+    @lru_cache(maxsize=2048)
+    def _host_allowed(self, host: str) -> bool:
+        h = host.strip().lower().rstrip(".")
+        if not h:
+            return False
+        if h in {"localhost"} or h.endswith(".local"):
+            return False
+        if h in {"metadata.google.internal"}:
+            return False
+
+        # If it's an IP literal, check directly.
+        try:
+            ip = ip_address(h)
+            return self._ip_allowed(ip)
+        except ValueError:
+            pass
+
+        # Resolve and block private/loopback/link-local/etc. Fail closed if DNS fails.
+        try:
+            infos = socket.getaddrinfo(h, None, proto=socket.IPPROTO_TCP)
+        except Exception as e:
+            logging.warning("DNS resolution failed for host %s: %s", h, e)
+            return False
+
+        for fam, _type, _proto, _canon, sockaddr in infos:
+            try:
+                if fam == socket.AF_INET:
+                    ip = ip_address(sockaddr[0])
+                elif fam == socket.AF_INET6:
+                    ip = ip_address(sockaddr[0])
+                else:
+                    continue
+            except Exception:
+                return False
+            if not self._ip_allowed(ip):
+                return False
+        return True
+
+    def _ip_allowed(self, ip) -> bool:  # type: ignore[no-untyped-def]
+        if ip.is_loopback or ip.is_private or ip.is_link_local:
+            return False
+        if ip.is_multicast or ip.is_unspecified or ip.is_reserved:
+            return False
+        return True
 
     @lru_cache(maxsize=256)
     def _robots_for(self, scheme: str, host: str) -> RobotFileParser:
