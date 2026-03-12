@@ -7,7 +7,7 @@ This project is designed to:
 - Run entirely from the repo (no external LLM APIs required).
 - Avoid account creation and avoid interacting with login-gated content.
 - Respect `robots.txt`, use conservative rate limits, and only fetch `http(s)` URLs.
-- Never overwrite existing posts; it only creates new files (typically via PR).
+- Never overwrite existing posts; it only creates new files.
 
 ## Quick start (local)
 
@@ -16,7 +16,8 @@ cd ghost_blogger_agent
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
-pip install -e .[dev]
+pip install -r requirements.txt
+pip install -e . --no-deps
 
 python -m ghost_blogger run --config config.yaml
 ```
@@ -53,7 +54,18 @@ See:
 
 - `.github/workflows/ghost_blogger.yml`
 
-The workflow is scheduled and opens a PR with a new post.
+The workflow is scheduled and commits a new post to `main` when it has content.
+
+## Environment overrides
+
+You can override parts of `config.yaml` via environment variables:
+
+- `GHOST_POSTS_DIR`
+- `GHOST_MAX_PAGES_PER_RUN`
+- `GHOST_DELAY_S`
+- `GHOST_OBEY_ROBOTS_TXT` (`true`/`false`)
+- `GHOST_FEEDS` (comma-separated)
+- `GHOST_SEED_URLS` (comma-separated)
 
 ## Safety notes
 

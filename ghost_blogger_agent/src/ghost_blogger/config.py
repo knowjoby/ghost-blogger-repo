@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
+from dataclasses import replace
 from pathlib import Path
 from typing import Any, Union
 
@@ -78,7 +80,7 @@ def load_config(path: Union[str, Path]) -> AppConfig:
     state = _req(raw, "state")
     llm = _req(raw, "llm")
 
-    return AppConfig(
+    cfg = AppConfig(
         agent=AgentConfig(
             name=str(_req(agent, "name")),
             user_agent=str(_req(agent, "user_agent")),
@@ -110,3 +112,32 @@ def load_config(path: Union[str, Path]) -> AppConfig:
             max_new_chars=int(_req(llm, "max_new_chars")),
         ),
     )
+
+    # Environment overrides (useful for CI and local experimentation without editing YAML).
+    posts_dir = os.getenv("GHOST_POSTS_DIR")
+    if posts_dir:
+        cfg = replace(cfg, output=replace(cfg.output, posts_dir=posts_dir))
+
+    max_pages = os.getenv("GHOST_MAX_PAGES_PER_RUN")
+    if max_pages:
+        cfg = replace(cfg, agent=replace(cfg.agent, max_pages_per_run=int(max_pages)))
+
+    delay_s = os.getenv("GHOST_DELAY_S")
+    if delay_s:
+        cfg = replace(cfg, agent=replace(cfg.agent, delay_s=float(delay_s)))
+
+    obey_robots = os.getenv("GHOST_OBEY_ROBOTS_TXT")
+    if obey_robots is not None and obey_robots != "":
+        cfg = replace(cfg, policy=replace(cfg.policy, obey_robots_txt=obey_robots.lower() in {"1", "true", "yes"}))
+
+    feeds = os.getenv("GHOST_FEEDS")
+    if feeds:
+        feed_list = [f.strip() for f in feeds.split(",") if f.strip()]
+        cfg = replace(cfg, sources=replace(cfg.sources, feeds=feed_list))
+
+    seed_urls = os.getenv("GHOST_SEED_URLS")
+    if seed_urls:
+        seed_list = [u.strip() for u in seed_urls.split(",") if u.strip()]
+        cfg = replace(cfg, sources=replace(cfg.sources, seed_urls=seed_list))
+
+    return cfg

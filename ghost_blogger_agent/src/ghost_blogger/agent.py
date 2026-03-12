@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
 
 from dateutil import tz
 
@@ -12,6 +13,7 @@ from ghost_blogger.net import PolicyError, SafeFetcher, redact_pii_like
 from ghost_blogger.sources import SourceItem, dedupe_items, iter_feed_items
 from ghost_blogger.state import State
 from ghost_blogger.summarize import summarize
+from ghost_blogger.validation import validate_post_markdown
 from ghost_blogger.write_post import Post, write_new_post
 
 
@@ -40,8 +42,20 @@ class GhostBloggerAgent:
         )
         try:
             notes = self._collect_notes(fetcher, state)
-            post = self._write_post(notes)
             state.last_run_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            if not notes:
+                state.save(self._cfg.state.path)
+                print("No notes collected; skipping post.")
+                return
+
+            post = self._write_post(notes)
+            if post is None:
+                # Avoid repeated attempts on the same URLs when the structure is invalid.
+                for n in notes:
+                    state.seen_urls.add(n.url)
+                state.save(self._cfg.state.path)
+                print("Post failed validation; skipping write.")
+                return
             for n in notes:
                 state.seen_urls.add(n.url)
             state.save(self._cfg.state.path)
@@ -86,13 +100,18 @@ class GhostBloggerAgent:
             )
         return notes
 
-    def _write_post(self, notes: list[Note]) -> Path:
+    def _write_post(self, notes: list[Note]) -> Optional[Path]:
         local_tz = tz.gettz(self._cfg.output.timezone) or tz.UTC
         now = datetime.now(tz=local_tz)
 
         title = self._pick_title(notes, now)
         body = self._render_body(title=title, now=now, notes=notes)
         post = Post(title=title, date=now, tags=self._cfg.output.tags, body_md=body)
+        md = body.strip()
+        errors = validate_post_markdown(md, notes_count=len(notes))
+        if errors:
+            print("Post validation errors:", "; ".join(errors))
+            return None
         return write_new_post(self._cfg.output.posts_dir, post)
 
     def _pick_title(self, notes: list[Note], now: datetime) -> str:
@@ -155,6 +174,8 @@ class GhostBloggerAgent:
         )
         out = llm.generate(prompt)
         out = out.strip()
+        if out and "not sentient" not in out.lower():
+            out = "I’m not sentient—this is reflective writing as a tool.\n\n" + out
         if not out:
             return (
                 "I’m noticing a familiar pattern: I can collect facts quickly, but I have to be deliberate about "
