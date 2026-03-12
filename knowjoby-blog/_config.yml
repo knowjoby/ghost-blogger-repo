@@ -1,6 +1,6 @@
 title: Signal Log
 description: Daily AI industry linklog — automated, deduped, and searchable
-baseurl: "/ghost-blogger-repo"
+baseurl: "/ghost-blogger-repo/knowjoby-blog"
 url: "https://knowjoby.github.io"
 
 theme: minima
