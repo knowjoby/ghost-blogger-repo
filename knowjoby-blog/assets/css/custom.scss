@@ -130,9 +130,6 @@ a:hover {
   color: var(--primary-color);
 }
 
-/* Minimal nav: hide header links */
-.site-nav { display: none; }
-
 @media (max-width: 600px) {
   .site-header .wrapper {
     align-items: flex-start;
