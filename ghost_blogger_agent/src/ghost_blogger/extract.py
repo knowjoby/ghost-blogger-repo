@@ -24,7 +24,8 @@ def _clean_text(s: str) -> str:
 
 
 def extract_readable_text(html: str) -> ExtractedPage:
-    soup = BeautifulSoup(html, "lxml")
+    # Use stdlib parser to avoid requiring native deps (works on GitHub Actions by default).
+    soup = BeautifulSoup(html, "html.parser")
 
     for tag in soup(["script", "style", "noscript", "svg", "canvas", "form", "input", "button"]):
         tag.decompose()
