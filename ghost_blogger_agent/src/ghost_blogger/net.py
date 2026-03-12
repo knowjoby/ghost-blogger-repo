@@ -93,6 +93,24 @@ class SafeFetcher:
     def close(self) -> None:
         self._client.close()
 
+    def _sleep_if_needed(self, host: str) -> None:
+        now = time.time()
+        sleep_for = self._delay_s - (now - self._last_request_ts)
+        if sleep_for > 0:
+            time.sleep(sleep_for)
+
+        if host:
+            last_host_ts = self._last_request_by_host.get(host, 0.0)
+            host_sleep = self._delay_s - (time.time() - last_host_ts)
+            if host_sleep > 0:
+                time.sleep(host_sleep)
+
+    def _mark_request(self, host: str) -> None:
+        now = time.time()
+        self._last_request_ts = now
+        if host:
+            self._last_request_by_host[host] = now
+
     def _check_policy(self, url: str) -> None:
         u = normalize_url(url)
         p = urlparse(u)
@@ -115,7 +133,7 @@ class SafeFetcher:
         rp = RobotFileParser()
         try:
             r = self._client.get(robots_url)
-            if r.status_code >= 400:
+            if r.status_code != 200:
                 # Fail closed: if we cannot access robots.txt, assume disallowed.
                 rp.parse(["User-agent: *", "Disallow: /"])
             else:
@@ -138,48 +156,60 @@ class SafeFetcher:
         url = normalize_url(url)
         self._check_policy(url)
 
-        now = time.time()
-        sleep_for = self._delay_s - (now - self._last_request_ts)
-        if sleep_for > 0:
-            time.sleep(sleep_for)
-
         current = url
         redirects = 0
         while True:
             host = (urlparse(current).hostname or "").lower()
-            if host:
-                last_host_ts = self._last_request_by_host.get(host, 0.0)
-                host_sleep = self._delay_s - (time.time() - last_host_ts)
-                if host_sleep > 0:
-                    time.sleep(host_sleep)
+            self._sleep_if_needed(host)
 
-            r = self._client.get(current)
-            now = time.time()
-            self._last_request_ts = now
-            if host:
-                self._last_request_by_host[host] = now
+            try:
+                with self._client.stream("GET", current) as r:
+                    self._mark_request(host)
 
-            if r.status_code in {301, 302, 303, 307, 308} and "location" in r.headers:
-                redirects += 1
-                if redirects > self._max_redirects:
-                    raise PolicyError(f"Too many redirects: {url}")
-                nxt = str(httpx.URL(current).join(r.headers["location"]))
-                nxt = normalize_url(nxt)
-                # Validate the redirect target BEFORE fetching it.
-                self._check_policy(nxt)
-                current = nxt
-                continue
+                    if r.status_code in {301, 302, 303, 307, 308} and "location" in r.headers:
+                        redirects += 1
+                        if redirects > self._max_redirects:
+                            raise PolicyError(f"Too many redirects: {url}")
+                        nxt = str(httpx.URL(current).join(r.headers["location"]))
+                        nxt = normalize_url(nxt)
+                        # Validate the redirect target BEFORE fetching it.
+                        self._check_policy(nxt)
+                        current = nxt
+                        continue
 
-            break
+                    ct = r.headers.get("content-type")
+                    if looks_like_binary(ct):
+                        raise PolicyError(f"Non-text content-type blocked: {ct}")
 
-        final_url = normalize_url(str(r.url))
-        if final_url != current:
-            # Defensive: httpx may still normalize; re-check policy.
-            self._check_policy(final_url)
-        ct = r.headers.get("content-type")
-        if looks_like_binary(ct):
-            raise PolicyError(f"Non-text content-type blocked: {ct}")
-        text = r.text
-        if len(text) > self._max_chars:
-            text = text[: self._max_chars]
-        return FetchResult(url=final_url, status_code=r.status_code, content_type=ct, text=text)
+                    # Read a bounded amount to avoid untrusted-size responses.
+                    max_bytes = max(4096, min(self._max_chars * 4, 2_000_000))
+                    buf = bytearray()
+                    for chunk in r.iter_bytes():
+                        if not chunk:
+                            continue
+                        take = max_bytes - len(buf)
+                        if take <= 0:
+                            break
+                        buf.extend(chunk[:take])
+                        if len(buf) >= max_bytes:
+                            break
+
+                    enc = r.encoding or "utf-8"
+                    text = bytes(buf).decode(enc, errors="replace")
+                    if len(text) > self._max_chars:
+                        text = text[: self._max_chars]
+
+                    final_url = normalize_url(str(r.url))
+                    if final_url != current:
+                        self._check_policy(final_url)
+
+                    return FetchResult(
+                        url=final_url,
+                        status_code=r.status_code,
+                        content_type=ct,
+                        text=text,
+                    )
+            except httpx.RequestError as e:
+                raise PolicyError(f"Fetch failed: {current}: {e}") from e
+
+        raise PolicyError(f"Fetch failed: {url}")
