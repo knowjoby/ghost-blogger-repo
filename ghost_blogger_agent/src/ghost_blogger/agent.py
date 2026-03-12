@@ -56,18 +56,13 @@ class GhostBloggerAgent:
 
             notes = self._collect_notes(fetcher, already_seen)
             state.last_run_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
-            if not notes:
-                state.save(self._cfg.state.path)
-                print("No notes collected; skipping post.")
-                return
-
             post = self._write_post(notes)
             if post is None:
-                # Avoid repeated attempts on the same URLs when the structure is invalid.
+                # Avoid repeated attempts on the same URLs when we chose not to write.
                 for n in notes:
                     state.seen_urls.add(n.url)
                 state.save(self._cfg.state.path)
-                print("Post failed validation; skipping write.")
+                print("Skipping write.")
                 return
             for n in notes:
                 state.seen_urls.add(n.url)
@@ -138,8 +133,8 @@ class GhostBloggerAgent:
         md = body.strip()
         errors = validate_post_markdown(md, notes_count=len(notes))
         if errors:
-            print("Post validation errors:", "; ".join(errors))
-            return None
+            # User preference: publish anyway; just log the issues.
+            print("Post validation warnings:", "; ".join(errors))
         return write_new_post(self._cfg.output.posts_dir, post)
 
     def _pick_title(self, notes: list[Note], now: datetime) -> str:
