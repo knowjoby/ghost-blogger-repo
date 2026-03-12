@@ -5,20 +5,9 @@ from pathlib import Path
 
 from ghost_blogger.config import LLMConfig
 
+from .base import LLM, LLMInfo
 from .template import TemplateLLM
 from .tiny_char_gpt import TinyCharGPTLLM
-
-
-class LLM:
-    def generate(self, prompt: str) -> str:  # pragma: no cover (interface)
-        raise NotImplementedError
-
-
-@dataclass(frozen=True)
-class LLMInfo:
-    kind: str
-    ok: bool
-    detail: str
 
 
 def get_llm(cfg: LLMConfig) -> LLM:
@@ -38,4 +27,3 @@ def get_llm(cfg: LLMConfig) -> LLM:
         return TemplateLLM(info=LLMInfo(kind="template", ok=True, detail="torch/model load failed"))
 
     return TemplateLLM(info=LLMInfo(kind="template", ok=True, detail="unknown llm.kind"))
-

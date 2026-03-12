@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from ghost_blogger.net import redact_pii_like
 
-from . import LLM, LLMInfo
+from .base import LLM, LLMInfo
 
 
 @dataclass(frozen=True)
@@ -23,4 +23,3 @@ class TemplateLLM(LLM):
             f"{core}\n\n"
             "My view today: prioritize concrete claims, track uncertainty, and keep my curiosity polite."
         )
-

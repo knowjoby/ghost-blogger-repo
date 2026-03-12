@@ -6,7 +6,7 @@ from typing import Optional
 
 from ghost_blogger.net import redact_pii_like
 
-from . import LLM
+from .base import LLM
 
 
 @dataclass(frozen=True)
