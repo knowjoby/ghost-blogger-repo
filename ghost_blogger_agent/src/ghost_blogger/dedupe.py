@@ -15,6 +15,45 @@ def fingerprint_for_run(*, day: date, source_urls: Iterable[str]) -> str:
 def fingerprint_marker(fp: str) -> str:
     return f"<!-- ghost:fingerprint:{fp} -->"
 
+def _extract_front_matter_title(text: str) -> str | None:
+    if not text.startswith("---"):
+        return None
+    # Very small YAML subset parsing: look for a single-line `title:` in the first block.
+    lines = text.splitlines()
+    if len(lines) < 3:
+        return None
+    # Find end of front matter
+    try:
+        end = lines[1:].index("---") + 1
+    except ValueError:
+        end = min(len(lines), 60)
+    for ln in lines[1:end]:
+        if ln.lower().startswith("title:"):
+            v = ln.split(":", 1)[1].strip()
+            if (v.startswith("'") and v.endswith("'")) or (v.startswith('"') and v.endswith('"')):
+                v = v[1:-1].strip()
+            return v or None
+    return None
+
+
+def seen_title_today(posts_dir: str | Path, *, day: date, title: str) -> bool:
+    pdir = Path(posts_dir)
+    if not pdir.exists():
+        return False
+    t = (title or "").strip().casefold()
+    if not t:
+        return False
+    prefix = f"{day:%Y-%m-%d}-"
+    for f in pdir.glob(f"{prefix}*.md"):
+        try:
+            content = f.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        ft = _extract_front_matter_title(content)
+        if ft and ft.strip().casefold() == t:
+            return True
+    return False
+
 
 def seen_fingerprint_today(posts_dir: str | Path, *, day: date, fp: str) -> bool:
     pdir = Path(posts_dir)
@@ -30,4 +69,3 @@ def seen_fingerprint_today(posts_dir: str | Path, *, day: date, fp: str) -> bool
         except OSError:
             continue
     return False
-
