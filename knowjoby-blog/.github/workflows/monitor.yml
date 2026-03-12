@@ -1,0 +1,72 @@
+name: Daily News Monitor
+
+on:
+  schedule:
+    # Runs 30 min after daily-news (08:00 UTC), then again at 09:30 and 11:00 UTC as retries
+    - cron: "30 8 * * *"   # attempt 1 check  — 2:00 PM IST
+    - cron: "30 9 * * *"   # attempt 2 retry  — 3:00 PM IST
+    - cron: "0  11 * * *"  # attempt 3 retry  — 4:30 PM IST
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  check-and-retry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Check if daily news ran successfully today
+        id: check
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          LOG_FILE="_data/run_log.json"
+
+          if [ ! -f "$LOG_FILE" ]; then
+            echo "run_log.json not found — assuming failure"
+            echo "needs_retry=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check if there is a log entry for today
+          TODAYS_RUN=$(python3 -c "
+          import json, sys
+          log = json.load(open('$LOG_FILE'))
+          today = '$TODAY'
+          runs_today = [r for r in log if r.get('ran_at','').startswith(today)]
+          if not runs_today:
+              print('no_run')
+          else:
+              last = runs_today[-1]
+              posts = last.get('posts_created', 0)
+              print(f'ran:posts={posts}')
+          ")
+
+          echo "Status: $TODAYS_RUN"
+
+          if echo "$TODAYS_RUN" | grep -q "no_run"; then
+            echo "needs_retry=true" >> $GITHUB_OUTPUT
+            echo "reason=No run found for today ($TODAY)" >> $GITHUB_OUTPUT
+          else
+            echo "needs_retry=false" >> $GITHUB_OUTPUT
+            echo "reason=Run found: $TODAYS_RUN" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Report status
+        run: |
+          echo "Needs retry: ${{ steps.check.outputs.needs_retry }}"
+          echo "Reason: ${{ steps.check.outputs.reason }}"
+
+      - name: Trigger daily-news workflow
+        if: steps.check.outputs.needs_retry == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Triggering daily-news workflow..."
+          gh workflow run daily-news.yml --ref main
+          echo "Triggered at $(date -u)"

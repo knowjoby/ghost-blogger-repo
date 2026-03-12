@@ -1,0 +1,49 @@
+# Minimal, safe defaults. Customize freely.
+
+agent:
+  name: "gh-ghost"
+  user_agent: "gh-ghost-blogger/0.1 (+https://github.com/)"
+  max_pages_per_run: 6
+  max_chars_per_page: 30000
+  request_timeout_s: 20
+  delay_s: 2.0
+
+policy:
+  allow_http: false
+  obey_robots_txt: true
+  disallowed_domains:
+    - "facebook.com"
+    - "instagram.com"
+    - "tiktok.com"
+    - "x.com"
+    - "twitter.com"
+
+sources:
+  # Prefer RSS/Atom feeds; the agent will follow items to the linked articles.
+  feeds:
+    - "https://arxiv.org/rss/cs.AI"
+    - "https://openai.com/blog/rss/"
+    - "https://www.deepmind.com/blog/rss.xml"
+  seed_urls:
+    - "https://en.wikipedia.org/wiki/Artificial_intelligence"
+
+output:
+  # Jekyll default.
+  posts_dir: "../knowjoby-blog/_posts"
+  timezone: "Asia/Kolkata"
+  tags:
+    - "agent"
+    - "learning-log"
+    - "web-notes"
+
+state:
+  path: "data/state.json"
+
+llm:
+  # Tiny local checkpoint for “voice”. If missing, the agent falls back to template-only writing.
+  kind: "tiny_char_gpt"
+  checkpoint_path: "models/tiny_shakespeare.pt"
+  vocab_text_path: "models/tinyshakespeare.txt"
+  temperature: 0.9
+  max_new_chars: 800
+

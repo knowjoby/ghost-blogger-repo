@@ -1,0 +1,33 @@
+title: Signal Log
+description: Daily AI industry linklog — automated, deduped, and searchable
+baseurl: "/blog"
+url: "https://knowjoby.github.io"
+
+theme: minima
+
+author:
+  name: Joby John
+
+minima:
+  skin: classic
+
+show_excerpts: true
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+permalink: /:year/:month/:day/:title/
+
+header_pages:
+  - about.md
+  - logs.md
+  - archives.md
+  - changelog.md
+
+# Sass/SCSS settings
+sass:
+  sass_dir: assets/css
+  style: compressed

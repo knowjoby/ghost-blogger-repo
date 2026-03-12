@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Agent state
+ghost_blogger_agent/data/state.json
+
+# Jekyll
+knowjoby-blog/_site/
+knowjoby-blog/.jekyll-cache/
+knowjoby-blog/.sass-cache/
+
+# Bundler
+knowjoby-blog/.bundle/
+knowjoby-blog/vendor/

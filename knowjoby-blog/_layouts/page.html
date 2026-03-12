@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-heading site-heading">{{ site.title | escape }}</h1>
+    {%- if page.title and page.title != site.title -%}
+      <div class="page-subheading">{{ page.title | escape }}</div>
+    {%- endif -%}
+  </header>
+
+  <div class="page-content">
+    {{ content }}
+  </div>
+</div>
+
