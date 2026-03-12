@@ -24,7 +24,8 @@ def iter_feed_items(fetcher: SafeFetcher, feed_url: str) -> list[SourceItem]:
 
     parsed = feedparser.parse(res.text)
     if getattr(parsed, "bozo", 0):
-        logging.warning("Malformed feed skipped: %s", feed_url)
+        ex = getattr(parsed, "bozo_exception", None)
+        logging.warning("Malformed feed skipped: %s (%s)", feed_url, ex)
         return []
     out: list[SourceItem] = []
     feed_title = getattr(parsed.feed, "title", None)
