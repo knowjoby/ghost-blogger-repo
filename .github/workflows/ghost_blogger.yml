@@ -19,6 +19,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Show revision
+        run: |
+          set -euxo pipefail
+          git rev-parse HEAD
+          sed -n '1,20p' ghost_blogger_agent/src/ghost_blogger/llm/template.py
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -29,7 +35,9 @@ jobs:
         run: |
           set -euxo pipefail
           python -m pip install -U pip
-          pip install -e .
+          pip uninstall -y ghost-blogger-agent || true
+          pip install --no-cache-dir -e .
+          python -c "import ghost_blogger; import ghost_blogger.llm.template; print(ghost_blogger.__file__); print(ghost_blogger.llm.template.__file__)"
 
       - name: Run agent
         working-directory: ghost_blogger_agent
