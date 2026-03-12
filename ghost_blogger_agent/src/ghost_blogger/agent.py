@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+import re
 from typing import Optional
 
 from dateutil import tz
@@ -89,6 +90,7 @@ class GhostBloggerAgent:
             extracted = extract_readable_text(res.text)
             text = redact_pii_like(extracted.text)
             summ = summarize(text, max_sentences=7)
+            summ = self._clean_summary(summ)
             if not summ:
                 continue
             notes.append(
@@ -100,6 +102,13 @@ class GhostBloggerAgent:
                 )
             )
         return notes
+
+    def _clean_summary(self, summary: str) -> str:
+        s = (summary or "").strip()
+        s = re.sub(r"\s+", " ", s)
+        if len(s) > 1200:
+            s = s[:1200].rstrip() + "…"
+        return s
 
     def _write_post(self, notes: list[Note]) -> Optional[Path]:
         local_tz = tz.gettz(self._cfg.output.timezone) or tz.UTC

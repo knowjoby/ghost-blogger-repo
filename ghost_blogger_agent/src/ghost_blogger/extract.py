@@ -34,10 +34,25 @@ def extract_readable_text(html: str) -> ExtractedPage:
         tag.decompose()
 
     title = None
-    if soup.title and soup.title.string:
+    # Prefer page-specific headings when available.
+    h1 = soup.select_one("h1#firstHeading") or soup.select_one("h1.title") or soup.find("h1")
+    if h1:
+        t = _clean_text(h1.get_text(" ", strip=True))
+        t = re.sub(r"^\s*Title:\s*", "", t, flags=re.IGNORECASE)
+        if t:
+            title = t
+    if not title and soup.title and soup.title.string:
         title = _clean_text(soup.title.string)
 
-    main = soup.find("article") or soup.find("main") or soup.body or soup
+    # Site-specific main-content hints (helps avoid navigation-heavy pages).
+    main = (
+        soup.select_one("blockquote.abstract")  # arXiv
+        or soup.select_one("#mw-content-text")  # Wikipedia
+        or soup.find("article")
+        or soup.find("main")
+        or soup.body
+        or soup
+    )
     text = main.get_text("\n", strip=True)
     text = _clean_text(text)
     if len(text) > 20_000:
