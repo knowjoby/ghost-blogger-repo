@@ -8,8 +8,8 @@ on:
       - "ghost_blogger_agent/**"
       - ".github/workflows/ghost_blogger.yml"
   schedule:
-    # Daily at 09:15 UTC (adjust as desired)
-    - cron: "15 9 * * *"
+    # Every 15 minutes (UTC). GitHub schedules are best-effort.
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write

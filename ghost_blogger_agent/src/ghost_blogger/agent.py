@@ -9,7 +9,13 @@ from typing import Optional
 from dateutil import tz
 
 from ghost_blogger.config import AppConfig
-from ghost_blogger.dedupe import fingerprint_for_run, fingerprint_marker, seen_fingerprint_today, seen_title_today
+from ghost_blogger.dedupe import (
+    existing_urls_today,
+    fingerprint_for_run,
+    fingerprint_marker,
+    seen_fingerprint_today,
+    seen_title_today,
+)
 from ghost_blogger.extract import extract_readable_text
 from ghost_blogger.net import PolicyError, SafeFetcher, redact_pii_like
 from ghost_blogger.sources import SourceItem, dedupe_items, iter_feed_items
@@ -43,7 +49,12 @@ class GhostBloggerAgent:
             max_chars=self._cfg.agent.max_chars_per_page,
         )
         try:
-            notes = self._collect_notes(fetcher, state)
+            local_tz = tz.gettz(self._cfg.output.timezone) or tz.UTC
+            today = datetime.now(tz=local_tz).date()
+            already_seen = set(state.seen_urls)
+            already_seen |= existing_urls_today(self._cfg.output.posts_dir, day=today)
+
+            notes = self._collect_notes(fetcher, already_seen)
             state.last_run_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
             if not notes:
                 state.save(self._cfg.state.path)
@@ -65,7 +76,7 @@ class GhostBloggerAgent:
         finally:
             fetcher.close()
 
-    def _collect_notes(self, fetcher: SafeFetcher, state: State) -> list[Note]:
+    def _collect_notes(self, fetcher: SafeFetcher, seen_urls: set[str]) -> list[Note]:
         items: list[SourceItem] = []
         for feed in self._cfg.sources.feeds:
             items.extend(iter_feed_items(fetcher, feed))
@@ -78,7 +89,7 @@ class GhostBloggerAgent:
         for it in items:
             if len(notes) >= self._cfg.agent.max_pages_per_run:
                 break
-            if it.url in state.seen_urls:
+            if it.url in seen_urls:
                 continue
             try:
                 res = fetcher.get_text(it.url)

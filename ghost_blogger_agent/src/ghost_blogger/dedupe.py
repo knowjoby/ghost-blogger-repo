@@ -4,6 +4,10 @@ import hashlib
 from datetime import date
 from pathlib import Path
 from typing import Iterable
+import re
+
+
+_URL_RE = re.compile(r"https?://[^\s)>\"]+")
 
 
 def fingerprint_for_run(*, day: date, source_urls: Iterable[str]) -> str:
@@ -69,3 +73,20 @@ def seen_fingerprint_today(posts_dir: str | Path, *, day: date, fp: str) -> bool
         except OSError:
             continue
     return False
+
+
+def existing_urls_today(posts_dir: str | Path, *, day: date) -> set[str]:
+    pdir = Path(posts_dir)
+    if not pdir.exists():
+        return set()
+    prefix = f"{day:%Y-%m-%d}-"
+    urls: set[str] = set()
+    for f in pdir.glob(f"{prefix}*.md"):
+        try:
+            # Only scan the first part; URLs appear early in our template.
+            content = f.read_text(encoding="utf-8", errors="ignore")[:25_000]
+        except OSError:
+            continue
+        for u in _URL_RE.findall(content):
+            urls.add(u.rstrip(").,]"))
+    return urls
