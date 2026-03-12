@@ -8,6 +8,7 @@ from typing import Optional
 from dateutil import tz
 
 from ghost_blogger.config import AppConfig
+from ghost_blogger.dedupe import fingerprint_for_run, fingerprint_marker, seen_fingerprint_today
 from ghost_blogger.extract import extract_readable_text
 from ghost_blogger.net import PolicyError, SafeFetcher, redact_pii_like
 from ghost_blogger.sources import SourceItem, dedupe_items, iter_feed_items
@@ -103,9 +104,13 @@ class GhostBloggerAgent:
     def _write_post(self, notes: list[Note]) -> Optional[Path]:
         local_tz = tz.gettz(self._cfg.output.timezone) or tz.UTC
         now = datetime.now(tz=local_tz)
+        fp = fingerprint_for_run(day=now.date(), source_urls=[n.url for n in notes])
+        if seen_fingerprint_today(self._cfg.output.posts_dir, day=now.date(), fp=fp):
+            print("Duplicate run fingerprint for today; skipping post.")
+            return None
 
         title = self._pick_title(notes, now)
-        body = self._render_body(title=title, now=now, notes=notes)
+        body = fingerprint_marker(fp) + "\n\n" + self._render_body(title=title, now=now, notes=notes)
         post = Post(title=title, date=now, tags=self._cfg.output.tags, body_md=body)
         md = body.strip()
         errors = validate_post_markdown(md, notes_count=len(notes))
