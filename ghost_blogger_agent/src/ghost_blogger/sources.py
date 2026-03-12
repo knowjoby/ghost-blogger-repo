@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import logging
 from typing import Iterable
 
 import feedparser
@@ -22,6 +23,9 @@ def iter_feed_items(fetcher: SafeFetcher, feed_url: str) -> list[SourceItem]:
         return []
 
     parsed = feedparser.parse(res.text)
+    if getattr(parsed, "bozo", 0):
+        logging.warning("Malformed feed skipped: %s", feed_url)
+        return []
     out: list[SourceItem] = []
     feed_title = getattr(parsed.feed, "title", None)
     for e in parsed.entries[:30]:

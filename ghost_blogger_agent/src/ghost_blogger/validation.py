@@ -4,6 +4,7 @@ import re
 
 
 _HAS_SENTIENCE_DISCLAIMER = re.compile(r"\bnot\s+sentient\b", re.IGNORECASE)
+_WORD_RE = re.compile(r"[A-Za-z][A-Za-z']+")
 
 
 def validate_post_markdown(md: str, *, notes_count: int) -> list[str]:
@@ -27,5 +28,11 @@ def validate_post_markdown(md: str, *, notes_count: int) -> list[str]:
 
     if not _HAS_SENTIENCE_DISCLAIMER.search(text):
         errors.append("missing 'not sentient' disclaimer in reflection")
+
+    words = [w.lower() for w in _WORD_RE.findall(text)]
+    if len(words) >= 200:
+        uniq_ratio = len(set(words)) / max(len(words), 1)
+        if uniq_ratio < 0.12:
+            errors.append("content looks overly repetitive")
 
     return errors

@@ -40,4 +40,6 @@ def extract_readable_text(html: str) -> ExtractedPage:
     main = soup.find("article") or soup.find("main") or soup.body or soup
     text = main.get_text("\n", strip=True)
     text = _clean_text(text)
+    if len(text) > 20_000:
+        text = text[:20_000]
     return ExtractedPage(title=title, text=text)

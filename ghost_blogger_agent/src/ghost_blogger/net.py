@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import re
 import time
 from dataclasses import dataclass
@@ -73,9 +74,10 @@ class SafeFetcher:
         obey_robots_txt: bool,
         max_chars: int,
     ) -> None:
+        # Conservative defaults: we manually validate redirects and we obey robots.txt.
         self._client = httpx.Client(
             headers={"User-Agent": user_agent, "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
-            follow_redirects=True,
+            follow_redirects=False,
             timeout=httpx.Timeout(timeout_s),
         )
         self._delay_s = float(delay_s)
@@ -85,6 +87,8 @@ class SafeFetcher:
         self._user_agent = user_agent
         self._max_chars = int(max_chars)
         self._last_request_ts = 0.0
+        self._last_request_by_host: dict[str, float] = {}
+        self._max_redirects = 5
 
     def close(self) -> None:
         self._client.close()
@@ -112,11 +116,14 @@ class SafeFetcher:
         try:
             r = self._client.get(robots_url)
             if r.status_code >= 400:
-                rp.parse([])
+                # Fail closed: if we cannot access robots.txt, assume disallowed.
+                rp.parse(["User-agent: *", "Disallow: /"])
             else:
                 rp.parse(r.text.splitlines())
-        except Exception:
-            rp.parse([])
+        except Exception as e:
+            logging.warning("robots.txt fetch failed for %s: %s", robots_url, e)
+            # Fail closed: if robots.txt cannot be fetched/parsed, assume disallowed.
+            rp.parse(["User-agent: *", "Disallow: /"])
         return rp
 
     def _robots_allows(self, url: str) -> bool:
@@ -136,12 +143,43 @@ class SafeFetcher:
         if sleep_for > 0:
             time.sleep(sleep_for)
 
-        r = self._client.get(url)
-        self._last_request_ts = time.time()
+        current = url
+        redirects = 0
+        while True:
+            host = (urlparse(current).hostname or "").lower()
+            if host:
+                last_host_ts = self._last_request_by_host.get(host, 0.0)
+                host_sleep = self._delay_s - (time.time() - last_host_ts)
+                if host_sleep > 0:
+                    time.sleep(host_sleep)
+
+            r = self._client.get(current)
+            now = time.time()
+            self._last_request_ts = now
+            if host:
+                self._last_request_by_host[host] = now
+
+            if r.status_code in {301, 302, 303, 307, 308} and "location" in r.headers:
+                redirects += 1
+                if redirects > self._max_redirects:
+                    raise PolicyError(f"Too many redirects: {url}")
+                nxt = str(httpx.URL(current).join(r.headers["location"]))
+                nxt = normalize_url(nxt)
+                # Validate the redirect target BEFORE fetching it.
+                self._check_policy(nxt)
+                current = nxt
+                continue
+
+            break
+
+        final_url = normalize_url(str(r.url))
+        if final_url != current:
+            # Defensive: httpx may still normalize; re-check policy.
+            self._check_policy(final_url)
         ct = r.headers.get("content-type")
         if looks_like_binary(ct):
             raise PolicyError(f"Non-text content-type blocked: {ct}")
         text = r.text
         if len(text) > self._max_chars:
             text = text[: self._max_chars]
-        return FetchResult(url=str(r.url), status_code=r.status_code, content_type=ct, text=text)
+        return FetchResult(url=final_url, status_code=r.status_code, content_type=ct, text=text)
