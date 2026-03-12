@@ -36,19 +36,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: "knowjoby-blog"
-          destination: "_site/knowjoby-blog"
-
-      - name: Add root redirect
-        run: |
-          set -euxo pipefail
-          cat > _site/index.html <<'HTML'
-          <!doctype html>
-          <meta charset="utf-8">
-          <meta http-equiv="refresh" content="0; url=knowjoby-blog/">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Redirecting…</title>
-          <p>Redirecting to <a href="knowjoby-blog/">knowjoby-blog/</a></p>
-          HTML
+          destination: "_site"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
