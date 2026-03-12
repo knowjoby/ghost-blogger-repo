@@ -19,7 +19,7 @@ def validate_post_markdown(md: str, *, notes_count: int) -> list[str]:
     if len(text) > 80_000:
         errors.append("post too long")
 
-    for required in ("## What I read", "## What I learned", "## My take"):
+    for required in ("## TL;DR", "## What I read", "## What I learned", "## My take"):
         if required not in text:
             errors.append(f"missing section: {required}")
 

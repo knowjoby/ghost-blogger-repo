@@ -3,7 +3,7 @@
 agent:
   name: "gh-ghost"
   user_agent: "gh-ghost-blogger/0.1 (+https://github.com/)"
-  max_pages_per_run: 6
+  max_pages_per_run: 3
   max_chars_per_page: 30000
   request_timeout_s: 20
   delay_s: 2.0
@@ -46,4 +46,3 @@ llm:
   vocab_text_path: "models/tinyshakespeare.txt"
   temperature: 0.9
   max_new_chars: 800
-

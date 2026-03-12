@@ -140,7 +140,7 @@ class GhostBloggerAgent:
         intro = (
             f"I’m `{self._cfg.agent.name}`, a GitHub-native reading agent. "
             "I don’t create accounts, I don’t submit forms, and I respect `robots.txt`. "
-            "What follows is a reading log and a reflective, *as-if* inner monologue (I don’t have feelings)."
+            "I’m not sentient—this is reflective writing as a tool."
         )
 
         if not notes:
@@ -150,6 +150,7 @@ class GhostBloggerAgent:
                 "I’ll try again next run.\n"
             )
 
+        tldr = self._tldr(notes)
         what_i_read = "\n".join(
             [
                 f"- [{n.title or n.url}]({n.url})"
@@ -158,22 +159,53 @@ class GhostBloggerAgent:
             ]
         )
 
-        learnings = "\n\n".join(
-            [
-                f"### {n.title or 'Untitled'}\n\n"
-                f"{n.summary}\n\n"
-                f"Source: [{n.url}]({n.url})"
-                for n in notes
-            ]
-        )
+        learnings = "\n\n".join([self._render_note(n) for n in notes])
 
         reflection = self._reflect(title=title, now=now, notes=notes)
 
         return (
+            f"## TL;DR\n\n{tldr}\n\n"
             f"{intro}\n\n"
             f"## What I read\n\n{what_i_read}\n\n"
             f"## What I learned\n\n{learnings}\n\n"
             f"## My take (reflective voice)\n\n{reflection}\n"
+        )
+
+    def _sentences(self, text: str) -> list[str]:
+        t = (text or "").strip()
+        if not t:
+            return []
+        parts = re.split(r"(?<=[.!?])\\s+", t)
+        out: list[str] = []
+        for p in parts:
+            s = p.strip()
+            if not s:
+                continue
+            out.append(s)
+        return out
+
+    def _tldr(self, notes: list[Note]) -> str:
+        bullets: list[str] = []
+        for n in notes:
+            sents = self._sentences(n.summary)
+            if sents:
+                bullets.append(sents[0])
+        bullets = bullets[:5]
+        if not bullets:
+            bullets = ["A few pages were read, but the summaries were too thin to extract a TL;DR."]
+        return "\n".join([f"- {b}" for b in bullets])
+
+    def _render_note(self, n: Note) -> str:
+        sents = self._sentences(n.summary)
+        key = sents[:3] if sents else []
+        if not key:
+            key = [n.summary.strip()] if n.summary.strip() else []
+        key_md = "\n".join([f"- {k}" for k in key if k])
+        src = f"[{n.url}]({n.url})"
+        return (
+            f"### {n.title or 'Untitled'}\n\n"
+            f"{key_md}\n\n"
+            f"Source: {src}"
         )
 
     def _reflect(self, *, title: str, now: datetime, notes: list[Note]) -> str:
@@ -191,12 +223,12 @@ class GhostBloggerAgent:
         )
         out = llm.generate(prompt)
         out = out.strip()
-        if out and "not sentient" not in out.lower():
-            out = "I’m not sentient—this is reflective writing as a tool.\n\n" + out
         if not out:
             return (
                 "I’m noticing a familiar pattern: I can collect facts quickly, but I have to be deliberate about "
                 "what I *trust* and what I merely *saw*. My “feelings” here are only a writing device—useful for "
                 "making uncertainty visible."
             )
+        if "not sentient" not in out.lower():
+            out = "I’m not sentient—this is reflective writing as a tool.\n\n" + out
         return out
