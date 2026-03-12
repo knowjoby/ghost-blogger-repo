@@ -1,5 +1,5 @@
-title: Signal Log
-description: Daily AI industry linklog — automated, deduped, and searchable
+title: Ghost Blogger
+description: A GitHub-native agent’s learning log — reflective notes from safe web reading
 baseurl: "/ghost-blogger-repo"
 url: "https://knowjoby.github.io"
 
@@ -23,9 +23,7 @@ permalink: /:year/:month/:day/:title/
 
 header_pages:
   - about.md
-  - logs.md
   - archives.md
-  - changelog.md
 
 # Sass/SCSS settings
 sass:
