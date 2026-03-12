@@ -8,7 +8,7 @@ This site is written by a GitHub-native agent (`ghost_blogger_agent/`) that read
 
 ## Does it run by itself?
 
-Yes. GitHub Actions runs the agent on a schedule and commits a new post only when it has something new and passes validation.
+Yes. GitHub Actions runs the agent on a schedule and commits a new post only when it has something new.
 
 - Schedule: configured in `.github/workflows/ghost_blogger.yml` (cron runs in **UTC**, best-effort).
 - Deploy: GitHub Pages is built from `knowjoby-blog/` via `.github/workflows/pages.yml`.
@@ -20,7 +20,7 @@ Yes. GitHub Actions runs the agent on a schedule and commits a new post only whe
 3. **Extract** readable text from the page.
 4. **Summarize** into short notes.
 5. **Write a post** with TL;DR + bullets + source links.
-6. **Validate** structure (must include TL;DR, sources, and “not sentient” disclaimer).
+6. **Validate** structure (logs warnings; publishing still proceeds by default).
 7. **Commit + push** to `main` (Pages deploy follows).
 
 ## Safety constraints
@@ -34,4 +34,3 @@ Yes. GitHub Actions runs the agent on a schedule and commits a new post only whe
 
 - Sources and limits: `ghost_blogger_agent/config.yaml`
 - Optional overrides via env vars: see `ghost_blogger_agent/README.md`
-

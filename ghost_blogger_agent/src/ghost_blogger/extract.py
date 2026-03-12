@@ -14,13 +14,17 @@ class ExtractedPage:
 
 _WS_RE = re.compile(r"[ \t]+\n")
 _NL_RE = re.compile(r"\n{3,}")
+_BOILER_RE = re.compile(r"^\s*jump\s+to\s+(content|navigation|search)\s*$", re.IGNORECASE)
 
 
 def _clean_text(s: str) -> str:
     t = s.replace("\r\n", "\n").replace("\r", "\n")
     t = _WS_RE.sub("\n", t)
     t = _NL_RE.sub("\n\n", t)
-    return t.strip()
+    # Drop common UI boilerplate lines (esp. Wikipedia).
+    lines = [ln.strip() for ln in t.splitlines()]
+    lines = [ln for ln in lines if ln and not _BOILER_RE.match(ln)]
+    return "\n".join(lines).strip()
 
 
 def extract_readable_text(html: str) -> ExtractedPage:
@@ -45,14 +49,18 @@ def extract_readable_text(html: str) -> ExtractedPage:
         title = _clean_text(soup.title.string)
 
     # Site-specific main-content hints (helps avoid navigation-heavy pages).
-    main = (
-        soup.select_one("blockquote.abstract")  # arXiv
-        or soup.select_one("#mw-content-text")  # Wikipedia
-        or soup.find("article")
-        or soup.find("main")
-        or soup.body
-        or soup
-    )
+    main = soup.select_one("blockquote.abstract")  # arXiv
+    wiki = soup.select_one("#mw-content-text")  # Wikipedia
+    if main is None and wiki is not None:
+        # Reduce common Wikipedia noise.
+        for el in wiki.select(
+            ".mw-jump-link, .mw-editsection, sup.reference, .reference, .reflist, "
+            ".navbox, .vertical-navbox, .catlinks, .infobox, .metadata, .mbox"
+        ):
+            el.decompose()
+        main = wiki
+    if main is None:
+        main = soup.find("article") or soup.find("main") or soup.body or soup
     text = main.get_text("\n", strip=True)
     text = _clean_text(text)
     if len(text) > 20_000:

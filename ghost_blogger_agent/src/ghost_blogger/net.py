@@ -155,7 +155,7 @@ class SafeFetcher:
         # Resolve and block private/loopback/link-local/etc. Fail closed if DNS fails.
         try:
             infos = socket.getaddrinfo(h, None, proto=socket.IPPROTO_TCP)
-        except Exception as e:
+        except OSError as e:
             logging.warning("DNS resolution failed for host %s: %s", h, e)
             return False
 
@@ -167,7 +167,7 @@ class SafeFetcher:
                     ip = ip_address(sockaddr[0])
                 else:
                     continue
-            except Exception:
+            except ValueError:
                 return False
             if not self._ip_allowed(ip):
                 return False
@@ -191,7 +191,7 @@ class SafeFetcher:
                 rp.parse(["User-agent: *", "Disallow: /"])
             else:
                 rp.parse(r.text.splitlines())
-        except Exception as e:
+        except (httpx.RequestError, OSError) as e:
             logging.warning("robots.txt fetch failed for %s: %s", robots_url, e)
             # Fail closed: if robots.txt cannot be fetched/parsed, assume disallowed.
             rp.parse(["User-agent: *", "Disallow: /"])
@@ -265,4 +265,3 @@ class SafeFetcher:
             except httpx.RequestError as e:
                 raise PolicyError(f"Fetch failed: {current}: {e}") from e
 
-        raise PolicyError(f"Fetch failed: {url}")

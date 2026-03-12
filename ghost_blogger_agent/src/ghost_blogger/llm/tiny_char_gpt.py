@@ -1,12 +1,61 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import hashlib
+import os
 from pathlib import Path
 from typing import Optional
 
 from ghost_blogger.net import redact_pii_like
 
 from .base import LLM
+
+
+def _read_expected_sha256(path: Path) -> Optional[str]:
+    sidecar = Path(str(path) + ".sha256")
+    if not sidecar.exists():
+        return None
+    try:
+        raw = sidecar.read_text(encoding="utf-8", errors="ignore").strip()
+    except OSError:
+        return None
+    if not raw:
+        return None
+    # Accept either `<hex>` or `<hex>  <filename>`.
+    token = raw.split()[0].strip()
+    if len(token) != 64:
+        return None
+    try:
+        int(token, 16)
+    except ValueError:
+        return None
+    return token.lower()
+
+
+def _sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _verify_local_model_file(path: Path) -> bool:
+    """
+    Guard against unsafe checkpoint loading.
+
+    PyTorch checkpoints are pickle-based. We only load when a sidecar `.sha256`
+    exists and matches, unless the user explicitly opts in.
+    """
+    allow_unsafe = os.getenv("GHOST_ALLOW_UNSAFE_CHECKPOINTS", "").strip().lower() in {"1", "true", "yes"}
+    expected = _read_expected_sha256(path)
+    if expected is None:
+        return allow_unsafe
+    try:
+        actual = _sha256_file(path)
+    except OSError:
+        return False
+    return actual.lower() == expected.lower()
 
 
 @dataclass(frozen=True)
@@ -27,11 +76,16 @@ class TinyCharGPTLLM(LLM):
         temperature: float,
         max_new_chars: int,
     ) -> Optional["TinyCharGPTLLM"]:
+        if not _verify_local_model_file(checkpoint_path):
+            return None
+        if not _verify_local_model_file(vocab_text_path):
+            return None
+
         try:
             import torch
             import torch.nn as nn
             from torch.nn import functional as F
-        except Exception:
+        except ImportError:
             return None
 
         text = vocab_text_path.read_text(encoding="utf-8", errors="ignore")
@@ -146,14 +200,21 @@ class TinyCharGPTLLM(LLM):
 
         model = GPT().to(device)
         try:
-            ckpt = torch.load(str(checkpoint_path), map_location=device)
+            # Prefer safe loading when supported.
+            try:
+                ckpt = torch.load(str(checkpoint_path), map_location=device, weights_only=True)
+            except TypeError:
+                # Older PyTorch: torch.load is pickle-based and unsafe for untrusted files.
+                if os.getenv("GHOST_ALLOW_UNSAFE_CHECKPOINTS", "").strip().lower() not in {"1", "true", "yes"}:
+                    return None
+                ckpt = torch.load(str(checkpoint_path), map_location=device)
             if isinstance(ckpt, dict) and "model_state_dict" in ckpt:
                 model.load_state_dict(ckpt["model_state_dict"])
             elif isinstance(ckpt, dict):
                 model.load_state_dict(ckpt)
             else:
                 return None
-        except Exception:
+        except (RuntimeError, ValueError, KeyError):
             return None
 
         model.eval()
@@ -169,7 +230,7 @@ class TinyCharGPTLLM(LLM):
     def generate(self, prompt: str) -> str:
         try:
             import torch
-        except Exception:
+        except ImportError:
             return ""
 
         p = redact_pii_like(prompt)

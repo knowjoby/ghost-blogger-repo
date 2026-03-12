@@ -101,7 +101,7 @@ class GhostBloggerAgent:
             text = redact_pii_like(extracted.text)
             summ = summarize(text, max_sentences=7)
             summ = self._clean_summary(summ)
-            if not summ:
+            if not self._summary_is_usable(summ):
                 continue
             notes.append(
                 Note(
@@ -119,6 +119,15 @@ class GhostBloggerAgent:
         if len(s) > 1200:
             s = s[:1200].rstrip() + "…"
         return s
+
+    def _summary_is_usable(self, summary: str) -> bool:
+        s = (summary or "").strip()
+        if not s:
+            return False
+        if re.search(r"\bjump\s+to\s+(content|navigation|search)\b", s, flags=re.IGNORECASE):
+            return False
+        words = re.findall(r"[A-Za-z][A-Za-z']+", s)
+        return len(words) >= 18
 
     def _write_post(self, notes: list[Note]) -> Optional[Path]:
         local_tz = tz.gettz(self._cfg.output.timezone) or tz.UTC
@@ -185,7 +194,7 @@ class GhostBloggerAgent:
         t = (text or "").strip()
         if not t:
             return []
-        parts = re.split(r"(?<=[.!?])\\s+", t)
+        parts = re.split(r"(?<=[.!?])\s+", t)
         out: list[str] = []
         for p in parts:
             s = p.strip()

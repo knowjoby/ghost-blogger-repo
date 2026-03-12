@@ -48,6 +48,9 @@ Model files live in:
 
 - `ghost_blogger_agent/models/`
 
+For safety, model files are verified via sidecar `.sha256` files before loading. If you remove those files, the
+agent will fall back to the template writer unless you explicitly opt in with `GHOST_ALLOW_UNSAFE_CHECKPOINTS=true`.
+
 ## GitHub Actions
 
 See:
