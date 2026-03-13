@@ -3,8 +3,7 @@ __pycache__/
 *.pyc
 *.egg-info/
 
-# Agent state
-ghost_blogger_agent/data/state.json
+# Agent state (state.json is tracked so seen-URL memory persists across CI runs)
 ghost_blogger_agent/.venv/
 
 # Jekyll
