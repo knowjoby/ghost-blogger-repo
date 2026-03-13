@@ -6,41 +6,6 @@ permalink: /status/
 
 Live dashboard — generated from `_data/runs.json` and `site.posts` on every deploy.
 
-<style>
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 12px;
-  margin: 16px 0 24px;
-}
-.stat-card {
-  padding: 14px 16px;
-  border: 1px solid #d0d7de;
-  border-radius: 8px;
-  text-align: center;
-  background: #f6f8fa;
-}
-.stat-card .num {
-  font-size: 2em;
-  font-weight: 700;
-  color: #0969da;
-  line-height: 1.1;
-}
-.stat-card .label {
-  font-size: 0.78em;
-  color: #57606a;
-  margin-top: 2px;
-}
-.run-table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
-.run-table th { background: #f6f8fa; padding: 6px 10px; text-align: left; border-bottom: 2px solid #d0d7de; }
-.run-table td { padding: 5px 10px; border-bottom: 1px solid #eaecef; vertical-align: middle; }
-.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; }
-.dot-green  { background: #22c55e; }
-.dot-orange { background: #f97316; }
-.sparkline-wrap { margin: 12px 0 6px; }
-.sparkline-label { font-size: 0.78em; color: #57606a; margin-bottom: 4px; }
-</style>
-
 {% assign total_posts = site.posts | size %}
 {% assign runs = site.data.runs %}
 {% assign total_runs = runs | size %}
@@ -118,7 +83,7 @@ Live dashboard — generated from `_data/runs.json` and `site.posts` on every de
 <tbody>
 {% for run in runs limit: 30 %}
 <tr>
-  <td style="white-space:nowrap;color:#57606a">{{ run.timestamp | replace: "T", " " | slice: 0, 16 }}</td>
+  <td style="white-space:nowrap;color:var(--text-muted)">{{ run.timestamp | replace: "T", " " | slice: 0, 16 }}</td>
   <td>{{ run.pages_attempted }}</td>
   <td>{{ run.pages_succeeded }}</td>
   <td>
@@ -130,7 +95,7 @@ Live dashboard — generated from `_data/runs.json` and `site.posts` on every de
         </a>
       {% else %}yes{% endif %}
     {% else %}
-      <span class="dot dot-orange"></span><span style="color:#57606a">—</span>
+      <span class="dot dot-orange"></span><span style="color:var(--text-muted)">—</span>
     {% endif %}
   </td>
 </tr>
