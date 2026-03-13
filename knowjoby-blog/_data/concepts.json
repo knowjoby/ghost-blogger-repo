@@ -112,11 +112,12 @@
     ]
   },
   "enterprise": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
     "last_seen": "2026-03-14",
     "posts": [
-      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log",
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
     ]
   },
   "optimization": {
@@ -157,6 +158,142 @@
     "last_seen": "2026-03-14",
     "posts": [
       "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "beyond": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "semantic": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "similarity": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "introducing": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "nvidia": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "nemo": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "retriever": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "generalizable": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "agentic": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "retrieval": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "pipeline": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "article": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "published": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "march": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "radek": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "osmulski": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "radekosmulski-nvidia": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
     ]
   }
 }

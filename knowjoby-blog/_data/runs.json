@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-03-13T20:04:47+00:00",
+    "pages_attempted": 47,
+    "pages_succeeded": 1,
+    "success_rate": 0.02,
+    "post_written": true,
+    "post_slug": "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+  },
+  {
     "timestamp": "2026-03-13T19:39:52+00:00",
     "pages_attempted": 46,
     "pages_succeeded": 0,
