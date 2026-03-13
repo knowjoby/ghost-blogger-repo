@@ -55,12 +55,13 @@ class GhostBloggerAgent:
             already_seen = set(state.seen_urls)
             already_seen |= existing_urls_today(self._cfg.output.posts_dir, day=today)
 
-            notes = self._collect_notes(fetcher, already_seen)
+            notes, fetch_stats = self._collect_notes(fetcher, already_seen)
             if not self._dry_run:
                 state.last_run_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
             if not notes:
                 if not self._dry_run:
                     state.save(self._cfg.state.path)
+                    self._write_telemetry(notes=[], fetch_stats=fetch_stats, post=None, local_tz=local_tz)
                 print("No notes collected; skipping post.")
                 return
             post = self._write_post(notes)
@@ -70,17 +71,21 @@ class GhostBloggerAgent:
                     for n in notes:
                         state.seen_urls.add(n.url)
                     state.save(self._cfg.state.path)
+                    self._write_telemetry(notes=notes, fetch_stats=fetch_stats, post=None, local_tz=local_tz)
                 print("Skipping write.")
                 return
             if not self._dry_run:
                 for n in notes:
                     state.seen_urls.add(n.url)
                 state.save(self._cfg.state.path)
+                self._write_telemetry(notes=notes, fetch_stats=fetch_stats, post=post, local_tz=local_tz)
             print(f"Wrote post: {post}")
         finally:
             fetcher.close()
 
-    def _collect_notes(self, fetcher: SafeFetcher, seen_urls: set[str]) -> list[Note]:
+    def _collect_notes(
+        self, fetcher: SafeFetcher, seen_urls: set[str]
+    ) -> tuple[list[Note], dict]:
         items: list[SourceItem] = []
         for feed in self._cfg.sources.feeds:
             items.extend(iter_feed_items(fetcher, feed))
@@ -90,11 +95,13 @@ class GhostBloggerAgent:
         items = dedupe_items(items)
 
         notes: list[Note] = []
+        pages_attempted = 0
         for it in items:
             if len(notes) >= self._cfg.agent.max_pages_per_run:
                 break
             if it.url in seen_urls:
                 continue
+            pages_attempted += 1
             try:
                 res = fetcher.get_text(it.url)
             except PolicyError:
@@ -117,7 +124,7 @@ class GhostBloggerAgent:
                     source=it.source,
                 )
             )
-        return notes
+        return notes, {"pages_attempted": pages_attempted, "pages_succeeded": len(notes)}
 
     def _clean_summary(self, summary: str) -> str:
         s = (summary or "").strip()
@@ -213,6 +220,40 @@ class GhostBloggerAgent:
             print("[DRY-RUN]\n" + render_jekyll_markdown(post))
             return Path("[dry-run]")
         return write_new_post(self._cfg.output.posts_dir, post)
+
+    def _write_telemetry(
+        self,
+        *,
+        notes: list[Note],
+        fetch_stats: dict,
+        post: Optional[Path],
+        local_tz: object,
+    ) -> None:
+        """Write run telemetry to knowjoby-blog/_data/. Non-fatal — never breaks post writing."""
+        try:
+            from ghost_blogger import telemetry as _tel
+
+            posts_dir = Path(self._cfg.output.posts_dir)
+            data_dir = posts_dir.parent / "_data"
+            post_slug = post.stem if post and str(post) != "[dry-run]" else None
+            _tel.record_run(
+                data_dir=data_dir,
+                timestamp_utc=datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                pages_attempted=fetch_stats.get("pages_attempted", 0),
+                pages_succeeded=fetch_stats.get("pages_succeeded", 0),
+                post_written=post is not None,
+                post_slug=post_slug,
+            )
+            if notes:
+                texts = [f"{n.title or ''} {n.summary}" for n in notes]
+                _tel.update_concepts(
+                    data_dir=data_dir,
+                    notes_texts=texts,
+                    post_slug=post_slug,
+                    today=datetime.now(tz=local_tz).date().isoformat(),
+                )
+        except Exception as exc:
+            print(f"Telemetry write failed (non-fatal): {exc}")
 
     def _pick_title(self, notes: list[Note], now: datetime) -> str:
         if notes and notes[0].title:

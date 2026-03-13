@@ -21,8 +21,11 @@ plugins:
 
 permalink: /:year/:month/:day/:title/
 
-# No header pages (keep nav minimal).
-header_pages: []
+header_pages:
+  - how-it-works.md
+  - map.md
+  - status.md
+  - about.md
 
 # Sass/SCSS settings
 sass:
