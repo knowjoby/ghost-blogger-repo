@@ -1,0 +1,129 @@
+name: Ghost Daily Cycle
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ghost-daily-cycle
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install agent
+        working-directory: ghost_blogger_agent
+        run: |
+          set -euxo pipefail
+          python -m pip install -U pip
+          pip uninstall -y ghost-blogger-agent || true
+          pip install --no-cache-dir -r requirements.txt
+          pip install --no-cache-dir -e . --no-deps
+
+      - name: Run analyst
+        working-directory: ghost_blogger_agent
+        run: |
+          set -euxo pipefail
+          python -m ghost_blogger analyse --config config.yaml
+
+      - name: Commit analysis.json
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add knowjoby-blog/_data/analysis.json
+          if git diff --cached --quiet; then
+            echo "No changes to analysis.json."
+            exit 0
+          fi
+          git commit -m "ghost: update analysis.json"
+          git push
+
+  improve:
+    needs: analyse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install agent
+        working-directory: ghost_blogger_agent
+        run: |
+          set -euxo pipefail
+          python -m pip install -U pip
+          pip uninstall -y ghost-blogger-agent || true
+          pip install --no-cache-dir -r requirements.txt
+          pip install --no-cache-dir -e . --no-deps
+
+      - name: Run improver
+        working-directory: ghost_blogger_agent
+        run: |
+          set -euxo pipefail
+          python -m ghost_blogger improve --config config.yaml
+
+      - name: Commit config and improvement log
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ghost_blogger_agent/config.yaml knowjoby-blog/_data/improvement_log.json
+          if git diff --cached --quiet; then
+            echo "No improvements to commit."
+            exit 0
+          fi
+          git commit -m "ghost: apply config improvements"
+          git push
+
+  verify:
+    needs: improve
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install agent
+        working-directory: ghost_blogger_agent
+        run: |
+          set -euxo pipefail
+          python -m pip install -U pip
+          pip uninstall -y ghost-blogger-agent || true
+          pip install --no-cache-dir -r requirements.txt
+          pip install --no-cache-dir -e . --no-deps
+
+      - name: Verify config with dry-run
+        working-directory: ghost_blogger_agent
+        run: |
+          set -euxo pipefail
+          python -m ghost_blogger run --config config.yaml --dry-run

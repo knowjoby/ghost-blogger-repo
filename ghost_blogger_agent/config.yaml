@@ -1,54 +1,49 @@
-# Minimal, safe defaults. Customize freely.
-
 agent:
-  name: "gh-ghost"
-  user_agent: "gh-ghost-blogger/0.1 (+https://github.com/)"
-  max_pages_per_run: 5
-  max_chars_per_page: 30000
-  request_timeout_s: 20
   delay_s: 2.0
-
+  max_chars_per_page: 30000
+  max_pages_per_run: 3
+  name: gh-ghost
+  request_timeout_s: 20
+  user_agent: gh-ghost-blogger/0.1 (+https://github.com/)
+analyst:
+  lookback_days: 7
+  min_feed_hits_to_keep: 1
+improver:
+  auto_add_seed_urls: true
+  auto_remove_dead_feeds: true
+  max_pages_delta: 1
+llm:
+  checkpoint_path: “models/tiny_shakespeare.pt”
+  kind: “tiny_char_gpt”
+  max_new_chars: 800
+  temperature: 0.9
+  vocab_text_path: “models/tinyshakespeare.txt”
+output:
+  posts_dir: ../knowjoby-blog/_posts
+  tags:
+  - agent
+  - learning-log
+  - web-notes
+  timezone: Asia/Kolkata
 policy:
   allow_http: false
-  obey_robots_txt: true
   disallowed_domains:
-    - "facebook.com"
-    - "instagram.com"
-    - "tiktok.com"
-    - "x.com"
-    - "twitter.com"
-
+  - facebook.com
+  - instagram.com
+  - tiktok.com
+  - x.com
+  - twitter.com
+  obey_robots_txt: true
 sources:
-  # Prefer RSS/Atom feeds; the agent will follow items to the linked articles.
   feeds:
-    - "https://lilianweng.github.io/index.xml"
-    - "https://huggingface.co/blog/feed.xml"
-    - "https://openai.com/news/rss.xml"
-    - "https://arxiv.org/rss/cs.AI"
-    - "https://arxiv.org/rss/cs.LG"
-    - "https://thegradient.pub/rss/"
+  - https://lilianweng.github.io/index.xml
+  - https://huggingface.co/blog/feed.xml
+  - https://arxiv.org/rss/cs.AI
+  - https://arxiv.org/rss/cs.LG
   seed_urls:
-    - "https://en.wikipedia.org/wiki/Artificial_intelligence"
-    - "https://en.wikipedia.org/wiki/Large_language_model"
-    - "https://en.wikipedia.org/wiki/Reinforcement_learning"
-
-output:
-  # Jekyll default.
-  posts_dir: "../knowjoby-blog/_posts"
-  timezone: "Asia/Kolkata"
-  tags:
-    - "agent"
-    - "learning-log"
-    - "web-notes"
-
+  - https://en.wikipedia.org/wiki/Artificial_intelligence
+  - https://en.wikipedia.org/wiki/Large_language_model
+  - https://en.wikipedia.org/wiki/Reinforcement_learning
 state:
-  path: "data/state.json"
   max_seen_age_days: 60
-
-llm:
-  # Tiny local checkpoint for “voice”. If missing, the agent falls back to template-only writing.
-  kind: "tiny_char_gpt"
-  checkpoint_path: "models/tiny_shakespeare.pt"
-  vocab_text_path: "models/tinyshakespeare.txt"
-  temperature: 0.9
-  max_new_chars: 800
+  path: data/state.json
