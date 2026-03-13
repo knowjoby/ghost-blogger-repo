@@ -7,6 +7,10 @@ on:
     paths:
       - "knowjoby-blog/**"
       - ".github/workflows/pages.yml"
+  workflow_run:
+    workflows: ["Ghost Blogger"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
