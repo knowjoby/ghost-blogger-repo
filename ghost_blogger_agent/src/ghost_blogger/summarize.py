@@ -26,14 +26,14 @@ def summarize(text: str, *, max_sentences: int = 7) -> str:
         return " ".join(sents[:max_sentences])
     freq = Counter(words)
 
-    def score(sent: str) -> float:
+    def score(sent: str, position: int) -> float:
         ws = [w.lower() for w in _WORD_RE.findall(sent)]
         if not ws:
             return 0.0
         base = sum(freq[w] for w in ws) / math.sqrt(len(ws))
-        return base
+        return base * (1.0 / (1 + position * 0.15))
 
-    scored = [(i, score(s), s) for i, s in enumerate(sents)]
+    scored = [(i, score(s, i), s) for i, s in enumerate(sents)]
     scored.sort(key=lambda t: t[1], reverse=True)
     chosen = sorted(scored[:max_sentences], key=lambda t: t[0])
     return " ".join(s for _, __, s in chosen)

@@ -185,15 +185,19 @@ class SafeFetcher:
         robots_url = f"{scheme}://{host}/robots.txt"
         rp = RobotFileParser()
         try:
-            r = self._client.get(robots_url)
-            if r.status_code != 200:
-                # Fail closed: if we cannot access robots.txt, assume disallowed.
-                rp.parse(["User-agent: *", "Disallow: /"])
-            else:
+            r = self._client.get(robots_url, follow_redirects=True)
+            if r.status_code == 200:
                 rp.parse(r.text.splitlines())
+            elif r.status_code == 404:
+                # No robots.txt: standard convention is to allow all crawling.
+                rp.parse(["User-agent: *", "Allow: /"])
+            else:
+                # Other non-200 (e.g. 500, 403): fail closed.
+                logging.warning("robots.txt returned %s for %s; assuming disallowed", r.status_code, robots_url)
+                rp.parse(["User-agent: *", "Disallow: /"])
         except (httpx.RequestError, OSError) as e:
             logging.warning("robots.txt fetch failed for %s: %s", robots_url, e)
-            # Fail closed: if robots.txt cannot be fetched/parsed, assume disallowed.
+            # Network failure: fail closed.
             rp.parse(["User-agent: *", "Disallow: /"])
         return rp
 

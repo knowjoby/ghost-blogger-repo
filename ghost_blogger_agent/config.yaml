@@ -3,7 +3,7 @@
 agent:
   name: "gh-ghost"
   user_agent: "gh-ghost-blogger/0.1 (+https://github.com/)"
-  max_pages_per_run: 3
+  max_pages_per_run: 5
   max_chars_per_page: 30000
   request_timeout_s: 20
   delay_s: 2.0
@@ -21,11 +21,16 @@ policy:
 sources:
   # Prefer RSS/Atom feeds; the agent will follow items to the linked articles.
   feeds:
-    - "https://openai.com/news/rss.xml"
-    - "https://huggingface.co/blog/feed.xml"
     - "https://lilianweng.github.io/index.xml"
+    - "https://huggingface.co/blog/feed.xml"
+    - "https://openai.com/news/rss.xml"
+    - "https://arxiv.org/rss/cs.AI"
+    - "https://arxiv.org/rss/cs.LG"
+    - "https://thegradient.pub/rss/"
   seed_urls:
     - "https://en.wikipedia.org/wiki/Artificial_intelligence"
+    - "https://en.wikipedia.org/wiki/Large_language_model"
+    - "https://en.wikipedia.org/wiki/Reinforcement_learning"
 
 output:
   # Jekyll default.
@@ -38,6 +43,7 @@ output:
 
 state:
   path: "data/state.json"
+  max_seen_age_days: 60
 
 llm:
   # Tiny local checkpoint for “voice”. If missing, the agent falls back to template-only writing.

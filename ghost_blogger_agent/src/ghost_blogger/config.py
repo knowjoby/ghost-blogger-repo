@@ -42,6 +42,7 @@ class OutputConfig:
 @dataclass(frozen=True)
 class StateConfig:
     path: str
+    max_seen_age_days: int = 60
 
 
 @dataclass(frozen=True)
@@ -103,7 +104,8 @@ def load_config(path: Union[str, Path]) -> AppConfig:
             timezone=str(_req(output, "timezone")),
             tags=list(_req(output, "tags") or []),
         ),
-        state=StateConfig(path=str(_req(state, "path"))),
+        state=StateConfig(path=str(_req(state, "path")),
+                          max_seen_age_days=int(state.get("max_seen_age_days", 60))),
         llm=LLMConfig(
             kind=str(_req(llm, "kind")),
             checkpoint_path=str(_req(llm, "checkpoint_path")),

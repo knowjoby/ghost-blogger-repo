@@ -34,11 +34,12 @@ class Note:
 
 
 class GhostBloggerAgent:
-    def __init__(self, cfg: AppConfig) -> None:
+    def __init__(self, cfg: AppConfig, *, dry_run: bool = False) -> None:
         self._cfg = cfg
+        self._dry_run = dry_run
 
     def run(self) -> None:
-        state = State.load(self._cfg.state.path)
+        state = State.load(self._cfg.state.path, max_seen_age_days=self._cfg.state.max_seen_age_days)
         fetcher = SafeFetcher(
             user_agent=self._cfg.agent.user_agent,
             timeout_s=self._cfg.agent.request_timeout_s,
@@ -55,22 +56,26 @@ class GhostBloggerAgent:
             already_seen |= existing_urls_today(self._cfg.output.posts_dir, day=today)
 
             notes = self._collect_notes(fetcher, already_seen)
-            state.last_run_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            if not self._dry_run:
+                state.last_run_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
             if not notes:
-                state.save(self._cfg.state.path)
+                if not self._dry_run:
+                    state.save(self._cfg.state.path)
                 print("No notes collected; skipping post.")
                 return
             post = self._write_post(notes)
             if post is None:
                 # Avoid repeated attempts on the same URLs when we chose not to write.
+                if not self._dry_run:
+                    for n in notes:
+                        state.seen_urls.add(n.url)
+                    state.save(self._cfg.state.path)
+                print("Skipping write.")
+                return
+            if not self._dry_run:
                 for n in notes:
                     state.seen_urls.add(n.url)
                 state.save(self._cfg.state.path)
-                print("Skipping write.")
-                return
-            for n in notes:
-                state.seen_urls.add(n.url)
-            state.save(self._cfg.state.path)
             print(f"Wrote post: {post}")
         finally:
             fetcher.close()
@@ -99,6 +104,7 @@ class GhostBloggerAgent:
 
             extracted = extract_readable_text(res.text)
             text = redact_pii_like(extracted.text)
+            text = self._clean_extracted_text(text)
             summ = summarize(text, max_sentences=7)
             summ = self._clean_summary(summ)
             if not self._summary_is_usable(summ):
@@ -120,14 +126,68 @@ class GhostBloggerAgent:
             s = s[:1200].rstrip() + "…"
         return s
 
+    def _clean_extracted_text(self, text: str) -> str:
+        t = (text or "").strip()
+        if not t:
+            return ""
+        # Remove HTML-ish fragments that sometimes appear inside text nodes.
+        t = re.sub(r"<[^>\n]{1,200}>", " ", t)
+        lines: list[str] = []
+        for ln in t.splitlines():
+            s = ln.strip()
+            if not s:
+                continue
+            if re.search(r"\b(opens in a new window|switch to chatgpt)\b", s, flags=re.IGNORECASE):
+                continue
+            if re.search(r"\b(back to articles|upvote|update on github)\b", s, flags=re.IGNORECASE):
+                continue
+            if re.search(r"\b(table of contents|citation references?)\b", s, flags=re.IGNORECASE):
+                continue
+            # Heuristic: drop navigation/TOC-like lines (very long with no sentence punctuation).
+            if len(s) > 140:
+                punct = re.findall(r"[.!?]", s)
+                words = re.findall(r"[A-Za-z][A-Za-z']+", s)
+                if not punct:
+                    continue
+                if len(words) > 35 and len(punct) < 2:
+                    continue
+            if len(s) > 500:
+                continue
+            if re.search(r"\b(accept\s+cookies?|cookie\s+policy|privacy\s+policy"
+                         r"|terms\s+of\s+service|copyright\s*©|all\s+rights\s+reserved)\b",
+                         s, flags=re.IGNORECASE):
+                continue
+            if re.search(r"(\|.*){3,}", s):
+                continue
+            if re.match(r"^https?://\S+$", s):
+                continue
+            words = re.findall(r"[A-Za-z]+", s)
+            if 1 <= len(words) <= 6 and all(w.isupper() for w in words):
+                continue
+            lines.append(s)
+        return "\n".join(lines).strip()
+
     def _summary_is_usable(self, summary: str) -> bool:
         s = (summary or "").strip()
         if not s:
             return False
+        if "<" in s or ">" in s:
+            return False
+        if re.search(r"\b(opens in a new window|switch to chatgpt)\b", s, flags=re.IGNORECASE):
+            return False
         if re.search(r"\bjump\s+to\s+(content|navigation|search)\b", s, flags=re.IGNORECASE):
             return False
+        if re.search(r"\b(back to articles|upvote|update on github)\b", s, flags=re.IGNORECASE):
+            return False
+        if re.match(r"^https?://\S+\s*$", s):
+            return False
         words = re.findall(r"[A-Za-z][A-Za-z']+", s)
-        return len(words) >= 18
+        if len(words) < 18:
+            return False
+        uniq_ratio = len(set(w.lower() for w in words)) / max(len(words), 1)
+        if uniq_ratio < 0.35:
+            return False
+        return True
 
     def _write_post(self, notes: list[Note]) -> Optional[Path]:
         local_tz = tz.gettz(self._cfg.output.timezone) or tz.UTC
@@ -148,6 +208,10 @@ class GhostBloggerAgent:
         if errors:
             # User preference: publish anyway; just log the issues.
             print("Post validation warnings:", "; ".join(errors))
+        if self._dry_run:
+            from ghost_blogger.write_post import render_jekyll_markdown
+            print("[DRY-RUN]\n" + render_jekyll_markdown(post))
+            return Path("[dry-run]")
         return write_new_post(self._cfg.output.posts_dir, post)
 
     def _pick_title(self, notes: list[Note], now: datetime) -> str:

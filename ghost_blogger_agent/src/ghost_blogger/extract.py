@@ -15,15 +15,36 @@ class ExtractedPage:
 _WS_RE = re.compile(r"[ \t]+\n")
 _NL_RE = re.compile(r"\n{3,}")
 _BOILER_RE = re.compile(r"^\s*jump\s+to\s+(content|navigation|search)\s*$", re.IGNORECASE)
+_HTMLY_RE = re.compile(r"<[^>\n]{1,200}>")
+_COOKIE_RE = re.compile(
+    r"\b(accept\s+cookies?|cookie\s+policy|privacy\s+policy|terms\s+of\s+service"
+    r"|copyright\s*©|all\s+rights\s+reserved)\b", re.IGNORECASE)
+_PIPE_NAV_RE = re.compile(r"(\|.*){3,}")
 
 
 def _clean_text(s: str) -> str:
     t = s.replace("\r\n", "\n").replace("\r", "\n")
+    # Some sites embed literal HTML snippets inside text nodes.
+    t = _HTMLY_RE.sub(" ", t)
     t = _WS_RE.sub("\n", t)
     t = _NL_RE.sub("\n\n", t)
     # Drop common UI boilerplate lines (esp. Wikipedia).
     lines = [ln.strip() for ln in t.splitlines()]
-    lines = [ln for ln in lines if ln and not _BOILER_RE.match(ln)]
+    filtered: list[str] = []
+    for ln in lines:
+        if not ln:
+            continue
+        if _BOILER_RE.match(ln):
+            continue
+        if _COOKIE_RE.search(ln):
+            continue
+        if _PIPE_NAV_RE.search(ln):
+            continue
+        words = re.findall(r"[A-Za-z]+", ln)
+        if 1 <= len(words) <= 6 and all(w.isupper() for w in words):
+            continue  # ALL-CAPS nav item
+        filtered.append(ln)
+    lines = filtered
     return "\n".join(lines).strip()
 
 
@@ -31,7 +52,9 @@ def extract_readable_text(html: str) -> ExtractedPage:
     # Use stdlib parser to avoid requiring native deps (works on GitHub Actions by default).
     soup = BeautifulSoup(html, "html.parser")
 
-    for tag in soup(["script", "style", "noscript", "svg", "canvas", "form", "input", "button"]):
+    for tag in soup(
+        ["script", "style", "noscript", "svg", "canvas", "form", "input", "button", "pre", "code", "template"]
+    ):
         tag.decompose()
 
     for tag in soup.find_all(["nav", "header", "footer", "aside"]):

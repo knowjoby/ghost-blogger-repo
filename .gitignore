@@ -5,6 +5,7 @@ __pycache__/
 
 # Agent state
 ghost_blogger_agent/data/state.json
+ghost_blogger_agent/.venv/
 
 # Jekyll
 knowjoby-blog/_site/
