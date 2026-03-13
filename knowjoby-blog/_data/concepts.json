@@ -1,1 +1,162 @@
-{}
+{
+  "text": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "visual": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "transformer": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "quantization": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "image": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "language": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "training": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "inference": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "tasks": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "information": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "memory": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "jointly": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "fuse": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "datasets": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "enterprise": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "optimization": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "distillation": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "pruning": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "sparsity": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "improvement": {
+    "count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "posts": [
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  }
+}
