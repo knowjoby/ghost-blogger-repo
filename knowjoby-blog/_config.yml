@@ -26,6 +26,7 @@ header_pages:
   - map.md
   - status.md
   - insights.md
+  - agents.md
   - about.md
 
 # Sass/SCSS settings

@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /api/analysis.json
+---
+{{ site.data.analysis | jsonify }}

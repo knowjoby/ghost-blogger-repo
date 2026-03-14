@@ -1,0 +1,194 @@
+name: Agent API
+
+# ──────────────────────────────────────────────────────────────
+# AGENTS ONLY. Human-initiated calls are rejected.
+#
+# Any external agent may trigger actions by sending a
+# repository_dispatch event. Rules:
+#
+#   1. client_payload.agent_id           must be present (non-empty)
+#   2. client_payload.agent_manifest_url must resolve to valid agent.json
+#   3. Rate-limit: enforced by GitHub's concurrency group
+#   4. All calls logged to knowjoby-blog/_data/agent_log.json
+#
+# How to call (example):
+#   curl -X POST \
+#     -H "Authorization: Bearer <GITHUB_PAT>" \
+#     -H "Content-Type: application/json" \
+#     https://api.github.com/repos/knowjoby/ghost-blogger-repo/dispatches \
+#     -d '{
+#           "event_type": "agent-analyse",
+#           "client_payload": {
+#             "agent_id":           "my-agent-v1",
+#             "agent_manifest_url": "https://myagent.example.com/.well-known/agent.json",
+#             "reason":             "daily sync"
+#           }
+#         }'
+# ──────────────────────────────────────────────────────────────
+
+on:
+  repository_dispatch:
+    types:
+      - agent-run
+      - agent-analyse
+      - agent-improve
+      - agent-reflect
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agent-api-${{ github.event.client_payload.agent_id || 'unknown' }}
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  gate:
+    name: Verify agent identity
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      agent_id:     ${{ steps.verify.outputs.agent_id }}
+      action:       ${{ steps.verify.outputs.action }}
+      verified:     ${{ steps.verify.outputs.verified }}
+    steps:
+      - name: Verify caller is an agent
+        id: verify
+        env:
+          AGENT_ID:           ${{ github.event.client_payload.agent_id }}
+          AGENT_MANIFEST_URL: ${{ github.event.client_payload.agent_manifest_url }}
+          EVENT_TYPE:         ${{ github.event.action }}
+        run: |
+          set -euo pipefail
+
+          # Rule 1: agent_id must be present
+          if [ -z "${AGENT_ID}" ]; then
+            echo "::error::REJECTED — client_payload.agent_id is missing. Only agents may call this API."
+            exit 1
+          fi
+
+          # Rule 2: agent_manifest_url must be present and resolve
+          if [ -z "${AGENT_MANIFEST_URL}" ]; then
+            echo "::error::REJECTED — client_payload.agent_manifest_url is missing. Prove you are an agent by providing your manifest URL."
+            exit 1
+          fi
+
+          HTTP_STATUS=$(curl -sf -o /tmp/manifest.json -w "%{http_code}" \
+            --max-time 10 \
+            -H "Accept: application/json" \
+            "${AGENT_MANIFEST_URL}" 2>/dev/null || echo "000")
+
+          if [ "${HTTP_STATUS}" != "200" ]; then
+            echo "::error::REJECTED — agent_manifest_url returned HTTP ${HTTP_STATUS}. URL must be publicly reachable."
+            exit 1
+          fi
+
+          # Rule 3: manifest must be valid JSON with a 'name' or 'agent_id' field
+          MANIFEST_NAME=$(python3 -c "
+          import json, sys
+          try:
+              d = json.load(open('/tmp/manifest.json'))
+              print(d.get('name') or d.get('agent_id') or d.get('id') or '')
+          except Exception:
+              print('')
+          ")
+
+          if [ -z "${MANIFEST_NAME}" ]; then
+            echo "::error::REJECTED — manifest at agent_manifest_url must be valid JSON with a 'name' or 'agent_id' field."
+            exit 1
+          fi
+
+          echo "VERIFIED — agent_id=${AGENT_ID} manifest_name=${MANIFEST_NAME} event=${EVENT_TYPE}"
+          echo "agent_id=${AGENT_ID}"  >> "$GITHUB_OUTPUT"
+          echo "action=${EVENT_TYPE}"  >> "$GITHUB_OUTPUT"
+          echo "verified=true"         >> "$GITHUB_OUTPUT"
+
+  execute:
+    name: Execute ${{ github.event.action }}
+    needs: gate
+    if: needs.gate.outputs.verified == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install agent
+        working-directory: ghost_blogger_agent
+        run: |
+          set -euxo pipefail
+          python -m pip install -U pip
+          pip uninstall -y ghost-blogger-agent || true
+          pip install --no-cache-dir -r requirements.txt
+          pip install --no-cache-dir -e . --no-deps
+
+      - name: Run — agent-run
+        if: github.event.action == 'agent-run'
+        working-directory: ghost_blogger_agent
+        run: python -m ghost_blogger run --config config.yaml
+
+      - name: Run — agent-analyse
+        if: github.event.action == 'agent-analyse'
+        working-directory: ghost_blogger_agent
+        run: python -m ghost_blogger analyse --config config.yaml
+
+      - name: Run — agent-improve
+        if: github.event.action == 'agent-improve'
+        working-directory: ghost_blogger_agent
+        run: python -m ghost_blogger improve --config config.yaml
+
+      - name: Run — agent-reflect
+        if: github.event.action == 'agent-reflect'
+        working-directory: ghost_blogger_agent
+        run: python -m ghost_blogger reflect --config config.yaml
+
+      - name: Log interaction
+        env:
+          AGENT_ID:           ${{ github.event.client_payload.agent_id }}
+          AGENT_MANIFEST_URL: ${{ github.event.client_payload.agent_manifest_url }}
+          REASON:             ${{ github.event.client_payload.reason }}
+          EVENT_TYPE:         ${{ github.event.action }}
+        run: |
+          set -euxo pipefail
+          python3 - <<'PYEOF'
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          log_path = Path("knowjoby-blog/_data/agent_log.json")
+          log = json.loads(log_path.read_text()) if log_path.exists() else []
+          log.insert(0, {
+              "timestamp":         datetime.now(tz=timezone.utc).isoformat(),
+              "agent_id":          os.environ.get("AGENT_ID", ""),
+              "agent_manifest_url":os.environ.get("AGENT_MANIFEST_URL", ""),
+              "action":            os.environ.get("EVENT_TYPE", ""),
+              "reason":            os.environ.get("REASON", ""),
+              "run_id":            "${{ github.run_id }}",
+          })
+          log = log[:100]   # keep last 100 entries
+          log_path.write_text(json.dumps(log, indent=2))
+          PYEOF
+
+      - name: Commit results
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            knowjoby-blog/_data/ \
+            knowjoby-blog/_posts \
+            ghost_blogger_agent/data/state.json \
+            ghost_blogger_agent/config.yaml 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "ghost: agent-api dispatch by ${{ github.event.client_payload.agent_id }} (${{ github.event.action }})"
+          git push

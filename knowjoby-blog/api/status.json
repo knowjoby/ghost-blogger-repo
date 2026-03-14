@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /api/status.json
+---
+{{ site.data.runs | jsonify }}
