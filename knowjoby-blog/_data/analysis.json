@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-13T15:26:42.007851+00:00",
+  "generated": "2026-03-14T06:53:59.030550+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -18,9 +18,62 @@
       "status_code": 200
     }
   },
-  "top_concepts_7d": [],
-  "concept_gaps": [],
-  "suggested_seed_urls": [],
+  "top_concepts_7d": [
+    "enterprise",
+    "text",
+    "visual",
+    "transformer",
+    "quantization",
+    "image",
+    "language",
+    "training",
+    "inference",
+    "tasks"
+  ],
+  "concept_gaps": [
+    "text",
+    "visual",
+    "transformer",
+    "quantization",
+    "image",
+    "language",
+    "training",
+    "inference",
+    "tasks",
+    "information",
+    "memory",
+    "jointly",
+    "fuse",
+    "datasets",
+    "optimization",
+    "distillation",
+    "pruning",
+    "sparsity",
+    "improvement",
+    "beyond"
+  ],
+  "suggested_seed_urls": [
+    "https://en.wikipedia.org/wiki/text",
+    "https://en.wikipedia.org/wiki/visual",
+    "https://en.wikipedia.org/wiki/transformer",
+    "https://en.wikipedia.org/wiki/quantization",
+    "https://en.wikipedia.org/wiki/image",
+    "https://en.wikipedia.org/wiki/language",
+    "https://en.wikipedia.org/wiki/training",
+    "https://en.wikipedia.org/wiki/inference",
+    "https://en.wikipedia.org/wiki/tasks",
+    "https://en.wikipedia.org/wiki/information",
+    "https://en.wikipedia.org/wiki/memory",
+    "https://en.wikipedia.org/wiki/jointly",
+    "https://en.wikipedia.org/wiki/fuse",
+    "https://en.wikipedia.org/wiki/datasets",
+    "https://en.wikipedia.org/wiki/optimization",
+    "https://en.wikipedia.org/wiki/distillation",
+    "https://en.wikipedia.org/wiki/pruning",
+    "https://en.wikipedia.org/wiki/sparsity",
+    "https://en.wikipedia.org/wiki/improvement",
+    "https://en.wikipedia.org/wiki/beyond"
+  ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.0
+  "run_success_rate_7d": 0.1176
 }
