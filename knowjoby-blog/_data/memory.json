@@ -1,9 +1,50 @@
 {
-  "last_reflection": "2026-03-13T15:28:11.630516+00:00",
+  "last_reflection": "2026-03-15T08:36:42.754350+00:00",
   "reflection_period": {
-    "start": "2026-03-06",
-    "end": "2026-03-13"
+    "start": "2026-03-08",
+    "end": "2026-03-15"
   },
-  "top_concepts": [],
-  "post_count": 9
+  "top_concepts": [
+    {
+      "term": "enterprise",
+      "count": 2
+    },
+    {
+      "term": "text",
+      "count": 1
+    },
+    {
+      "term": "visual",
+      "count": 1
+    },
+    {
+      "term": "transformer",
+      "count": 1
+    },
+    {
+      "term": "quantization",
+      "count": 1
+    },
+    {
+      "term": "image",
+      "count": 1
+    },
+    {
+      "term": "language",
+      "count": 1
+    },
+    {
+      "term": "training",
+      "count": 1
+    },
+    {
+      "term": "inference",
+      "count": 1
+    },
+    {
+      "term": "tasks",
+      "count": 1
+    }
+  ],
+  "post_count": 12
 }
