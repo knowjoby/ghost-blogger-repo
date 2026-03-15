@@ -112,12 +112,13 @@
     ]
   },
   "enterprise": {
-    "count": 2,
+    "count": 3,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-03-16",
     "posts": [
       "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log",
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
     ]
   },
   "optimization": {
@@ -249,27 +250,30 @@
     ]
   },
   "article": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-03-16",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
     ]
   },
   "published": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-03-16",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
     ]
   },
   "march": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-03-16",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
     ]
   },
   "radek": {
@@ -294,6 +298,110 @@
     "last_seen": "2026-03-14",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+    ]
+  },
+  "bringing": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "robotics": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "embedded": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "platforms": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "dataset": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "recording": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "fine": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "tuning": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "device": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "optimizations": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "gaetan": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "bahl": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "gbahlnxp": {
+    "count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "posts": [
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
     ]
   }
 }
