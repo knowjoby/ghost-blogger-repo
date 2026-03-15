@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-14T06:53:59.030550+00:00",
+  "generated": "2026-03-15T07:02:39.262316+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/beyond"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.1176
+  "run_success_rate_7d": 0.0426
 }
