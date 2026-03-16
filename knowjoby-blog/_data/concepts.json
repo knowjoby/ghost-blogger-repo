@@ -112,13 +112,14 @@
     ]
   },
   "enterprise": {
-    "count": 3,
+    "count": 4,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-16",
+    "last_seen": "2026-03-17",
     "posts": [
       "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log",
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
     ]
   },
   "optimization": {
@@ -250,30 +251,33 @@
     ]
   },
   "article": {
-    "count": 2,
+    "count": 3,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-16",
+    "last_seen": "2026-03-17",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
     ]
   },
   "published": {
-    "count": 2,
+    "count": 3,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-16",
+    "last_seen": "2026-03-17",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
     ]
   },
   "march": {
-    "count": 2,
+    "count": 3,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-16",
+    "last_seen": "2026-03-17",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
     ]
   },
   "radek": {
@@ -309,11 +313,12 @@
     ]
   },
   "robotics": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-16",
-    "last_seen": "2026-03-16",
+    "last_seen": "2026-03-17",
     "posts": [
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
     ]
   },
   "embedded": {
@@ -333,11 +338,12 @@
     ]
   },
   "dataset": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-16",
-    "last_seen": "2026-03-16",
+    "last_seen": "2026-03-17",
     "posts": [
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
     ]
   },
   "recording": {
@@ -402,6 +408,54 @@
     "last_seen": "2026-03-16",
     "posts": [
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
+    ]
+  },
+  "healthcare": {
+    "count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "posts": [
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+    ]
+  },
+  "foundational": {
+    "count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "posts": [
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+    ]
+  },
+  "physical": {
+    "count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "posts": [
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+    ]
+  },
+  "sean": {
+    "count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "posts": [
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+    ]
+  },
+  "huver": {
+    "count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "posts": [
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+    ]
+  },
+  "shuver": {
+    "count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "posts": [
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
     ]
   }
 }
