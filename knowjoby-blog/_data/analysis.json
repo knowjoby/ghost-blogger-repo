@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-16T07:23:41.165230+00:00",
+  "generated": "2026-03-17T07:10:09.632308+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -23,12 +23,12 @@
     "article",
     "published",
     "march",
+    "robotics",
+    "dataset",
     "text",
     "visual",
     "transformer",
-    "quantization",
-    "image",
-    "language"
+    "quantization"
   ],
   "concept_gaps": [
     "text",
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/beyond"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.04
+  "run_success_rate_7d": 0.0426
 }
