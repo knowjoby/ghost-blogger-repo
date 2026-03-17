@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-03-17T21:52:27+00:00",
+    "pages_attempted": 45,
+    "pages_succeeded": 0,
+    "success_rate": 0.0,
+    "post_written": false,
+    "post_slug": null
+  },
+  {
     "timestamp": "2026-03-17T21:00:27+00:00",
     "pages_attempted": 45,
     "pages_succeeded": 0,
@@ -790,13 +798,5 @@
     "success_rate": 0.0,
     "post_written": false,
     "post_slug": null
-  },
-  {
-    "timestamp": "2026-03-13T20:04:47+00:00",
-    "pages_attempted": 47,
-    "pages_succeeded": 1,
-    "success_rate": 0.02,
-    "post_written": true,
-    "post_slug": "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
   }
 ]
