@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-03-20T11:40:11+00:00",
+    "pages_attempted": 46,
+    "pages_succeeded": 0,
+    "success_rate": 0.0,
+    "post_written": false,
+    "post_slug": null
+  },
+  {
     "timestamp": "2026-03-20T10:51:30+00:00",
     "pages_attempted": 46,
     "pages_succeeded": 0,
@@ -790,13 +798,5 @@
     "success_rate": 0.02,
     "post_written": true,
     "post_slug": "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin"
-  },
-  {
-    "timestamp": "2026-03-15T17:49:09+00:00",
-    "pages_attempted": 31,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
   }
 ]
