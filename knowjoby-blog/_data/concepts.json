@@ -112,14 +112,15 @@
     ]
   },
   "enterprise": {
-    "count": 4,
+    "count": 5,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-17",
+    "last_seen": "2026-03-20",
     "posts": [
       "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log",
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
-      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
     ]
   },
   "optimization": {
@@ -195,11 +196,12 @@
     ]
   },
   "nvidia": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-03-20",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
     ]
   },
   "nemo": {
@@ -251,33 +253,36 @@
     ]
   },
   "article": {
-    "count": 3,
+    "count": 4,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-17",
+    "last_seen": "2026-03-20",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
-      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
     ]
   },
   "published": {
-    "count": 3,
+    "count": 4,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-17",
+    "last_seen": "2026-03-20",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
-      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
     ]
   },
   "march": {
-    "count": 3,
+    "count": 4,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-17",
+    "last_seen": "2026-03-20",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
-      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
     ]
   },
   "radek": {
@@ -456,6 +461,102 @@
     "last_seen": "2026-03-17",
     "posts": [
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m"
+    ]
+  },
+  "content": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "nemotron": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "safety": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "multimodal": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "multilingual": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "moderation": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "shyamala": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "prayaga": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "sprayaga25": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "isabel": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "hulseman": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "ihulseman0220": {
+    "count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "posts": [
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
     ]
   }
 }
