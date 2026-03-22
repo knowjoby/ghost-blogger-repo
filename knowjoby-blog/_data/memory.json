@@ -1,12 +1,36 @@
 {
-  "last_reflection": "2026-03-15T08:36:42.754350+00:00",
+  "last_reflection": "2026-03-22T08:34:38.776542+00:00",
   "reflection_period": {
-    "start": "2026-03-08",
-    "end": "2026-03-15"
+    "start": "2026-03-15",
+    "end": "2026-03-22"
   },
   "top_concepts": [
     {
       "term": "enterprise",
+      "count": 5
+    },
+    {
+      "term": "article",
+      "count": 4
+    },
+    {
+      "term": "published",
+      "count": 4
+    },
+    {
+      "term": "march",
+      "count": 4
+    },
+    {
+      "term": "nvidia",
+      "count": 2
+    },
+    {
+      "term": "robotics",
+      "count": 2
+    },
+    {
+      "term": "dataset",
       "count": 2
     },
     {
@@ -20,31 +44,7 @@
     {
       "term": "transformer",
       "count": 1
-    },
-    {
-      "term": "quantization",
-      "count": 1
-    },
-    {
-      "term": "image",
-      "count": 1
-    },
-    {
-      "term": "language",
-      "count": 1
-    },
-    {
-      "term": "training",
-      "count": 1
-    },
-    {
-      "term": "inference",
-      "count": 1
-    },
-    {
-      "term": "tasks",
-      "count": 1
     }
   ],
-  "post_count": 12
+  "post_count": 16
 }
