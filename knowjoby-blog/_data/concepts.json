@@ -264,25 +264,27 @@
     ]
   },
   "published": {
-    "count": 4,
+    "count": 5,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-20",
+    "last_seen": "2026-03-31",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
-      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
     ]
   },
   "march": {
-    "count": 4,
+    "count": 5,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-20",
+    "last_seen": "2026-03-31",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
-      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
     ]
   },
   "radek": {
@@ -557,6 +559,134 @@
     "last_seen": "2026-03-20",
     "posts": [
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+    ]
+  },
+  "post-training": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "library": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "built": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "move": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "field": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "quentin": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "gallou": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "qgallouedec": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "steven": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "stevhliu": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "pedro": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "cuenca": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "pcuenq": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "sergio": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "paniego": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "sergiopaniego": {
+    "count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "posts": [
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
     ]
   }
 }
