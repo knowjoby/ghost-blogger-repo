@@ -253,26 +253,28 @@
     ]
   },
   "article": {
-    "count": 4,
-    "first_seen": "2026-03-14",
-    "last_seen": "2026-03-20",
-    "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
-      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
-      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
-    ]
-  },
-  "published": {
     "count": 5,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-31",
+    "last_seen": "2026-04-01",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
-      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "published": {
+    "count": 6,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
+      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
+      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field",
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
     ]
   },
   "march": {
@@ -687,6 +689,110 @@
     "last_seen": "2026-03-31",
     "posts": [
       "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field"
+    ]
+  },
+  "holo3": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "breaking": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "computer": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "frontier": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "hcompany": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "team": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "april": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "ramzi": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "coster": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "ramzidecoster": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "pierre-louis": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "cedoz": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+    ]
+  },
+  "plcedoz38": {
+    "count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "posts": [
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
     ]
   }
 }
