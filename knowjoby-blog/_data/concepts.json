@@ -267,9 +267,9 @@
     ]
   },
   "published": {
-    "count": 8,
+    "count": 9,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-04-15",
+    "last_seen": "2026-04-17",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
@@ -278,7 +278,8 @@
       "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field",
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-04-10-ghost-notes-waypoint-1-5-higher-fidelity-interactive-worlds-for-everyday-gpus",
-      "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents"
+      "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
     ]
   },
   "march": {
@@ -744,13 +745,14 @@
     ]
   },
   "april": {
-    "count": 3,
+    "count": 4,
     "first_seen": "2026-04-01",
-    "last_seen": "2026-04-15",
+    "last_seen": "2026-04-17",
     "posts": [
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-04-10-ghost-notes-waypoint-1-5-higher-fidelity-interactive-worlds-for-everyday-gpus",
-      "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents"
+      "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
     ]
   },
   "ramzi": {
@@ -954,11 +956,12 @@
     ]
   },
   "agents": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-04-15",
-    "last_seen": "2026-04-15",
+    "last_seen": "2026-04-17",
     "posts": [
-      "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents"
+      "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
     ]
   },
   "ankita": {
@@ -1015,6 +1018,110 @@
     "last_seen": "2026-04-15",
     "posts": [
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents"
+    ]
+  },
+  "ecom-rlve": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "adaptive": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "verifiable": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "environments": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "e-commerce": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "conversational": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "owlgebra-ai": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "rahul": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "bajaj": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "thebajajra": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "jaya": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "nupur": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+    ]
+  },
+  "ai-queen": {
+    "count": 1,
+    "first_seen": "2026-04-17",
+    "last_seen": "2026-04-17",
+    "posts": [
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
     ]
   }
 }

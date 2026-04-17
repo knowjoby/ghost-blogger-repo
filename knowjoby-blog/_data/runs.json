@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-17T14:01:10+00:00",
+    "pages_attempted": 43,
+    "pages_succeeded": 1,
+    "success_rate": 0.02,
+    "post_written": true,
+    "post_slug": "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+  },
+  {
     "timestamp": "2026-04-17T12:07:20+00:00",
     "pages_attempted": 43,
     "pages_succeeded": 0,
@@ -785,14 +793,6 @@
   },
   {
     "timestamp": "2026-04-11T17:41:26+00:00",
-    "pages_attempted": 43,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
-  },
-  {
-    "timestamp": "2026-04-11T16:50:18+00:00",
     "pages_attempted": 43,
     "pages_succeeded": 0,
     "success_rate": 0.0,
