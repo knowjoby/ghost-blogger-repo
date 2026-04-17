@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-17T16:16:04+00:00",
+    "pages_attempted": 43,
+    "pages_succeeded": 1,
+    "success_rate": 0.02,
+    "post_written": true,
+    "post_slug": "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots"
+  },
+  {
     "timestamp": "2026-04-17T15:10:46+00:00",
     "pages_attempted": 42,
     "pages_succeeded": 0,
@@ -785,14 +793,6 @@
   },
   {
     "timestamp": "2026-04-11T19:22:12+00:00",
-    "pages_attempted": 43,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
-  },
-  {
-    "timestamp": "2026-04-11T18:22:46+00:00",
     "pages_attempted": 43,
     "pages_succeeded": 0,
     "success_rate": 0.0,
