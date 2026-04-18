@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-17T07:53:32.048848+00:00",
+  "generated": "2026-04-18T07:13:57.775120+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -27,8 +27,8 @@
     "nvidia",
     "robotics",
     "dataset",
-    "text",
-    "visual"
+    "reasoning",
+    "agents"
   ],
   "concept_gaps": [
     "text",
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/beyond"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.01
+  "run_success_rate_7d": 0.03
 }
