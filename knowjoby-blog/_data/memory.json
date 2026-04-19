@@ -1,29 +1,33 @@
 {
-  "last_reflection": "2026-04-12T08:48:22.355836+00:00",
+  "last_reflection": "2026-04-19T08:54:10.934483+00:00",
   "reflection_period": {
-    "start": "2026-04-05",
-    "end": "2026-04-12"
+    "start": "2026-04-12",
+    "end": "2026-04-19"
   },
   "top_concepts": [
     {
       "term": "published",
-      "count": 7
+      "count": 10
     },
     {
       "term": "enterprise",
-      "count": 5
+      "count": 7
     },
     {
       "term": "article",
-      "count": 5
+      "count": 7
     },
     {
       "term": "march",
       "count": 5
     },
     {
+      "term": "april",
+      "count": 5
+    },
+    {
       "term": "nvidia",
-      "count": 2
+      "count": 3
     },
     {
       "term": "robotics",
@@ -34,17 +38,13 @@
       "count": 2
     },
     {
-      "term": "april",
+      "term": "reasoning",
       "count": 2
     },
     {
-      "term": "text",
-      "count": 1
-    },
-    {
-      "term": "visual",
-      "count": 1
+      "term": "agents",
+      "count": 2
     }
   ],
-  "post_count": 22
+  "post_count": 26
 }
