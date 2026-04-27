@@ -270,11 +270,10 @@
     ]
   },
   "published": {
-    "count": 10,
+    "count": 11,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-04-17",
+    "last_seen": "2026-04-27",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
@@ -283,7 +282,8 @@
       "2026-04-10-ghost-notes-waypoint-1-5-higher-fidelity-interactive-worlds-for-everyday-gpus",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
       "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati",
-      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots"
+      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
     ]
   },
   "march": {
@@ -749,15 +749,16 @@
     ]
   },
   "april": {
-    "count": 5,
+    "count": 6,
     "first_seen": "2026-04-01",
-    "last_seen": "2026-04-17",
+    "last_seen": "2026-04-27",
     "posts": [
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-04-10-ghost-notes-waypoint-1-5-higher-fidelity-interactive-worlds-for-everyday-gpus",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
       "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati",
-      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots"
+      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
     ]
   },
   "ramzi": {
@@ -1216,6 +1217,126 @@
     "last_seen": "2026-04-17",
     "posts": [
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots"
+    ]
+  },
+  "build": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "scalable": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "apps": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "openai": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "privacy": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "filter": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "yuvraj": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "sharma": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "ysharma": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "freddy": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "boulton": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "freddyaboulton": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "abubakar": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "abid": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
+    ]
+  },
+  "abidlabs": {
+    "count": 1,
+    "first_seen": "2026-04-27",
+    "last_seen": "2026-04-27",
+    "posts": [
+      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter"
     ]
   }
 }
