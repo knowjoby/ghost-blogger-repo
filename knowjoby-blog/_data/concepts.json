@@ -112,7 +112,7 @@
     ]
   },
   "enterprise": {
-    "count": 8,
+    "count": 9,
     "first_seen": "2026-03-14",
     "last_seen": "2026-04-28",
     "posts": [
@@ -123,7 +123,8 @@
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
-      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us"
+      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "optimization": {
@@ -191,21 +192,23 @@
     ]
   },
   "introducing": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-04-28",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "nvidia": {
-    "count": 3,
+    "count": 4,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-04-17",
+    "last_seen": "2026-04-28",
     "posts": [
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
-      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots"
+      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "nemo": {
@@ -257,7 +260,7 @@
     ]
   },
   "article": {
-    "count": 8,
+    "count": 9,
     "first_seen": "2026-03-14",
     "last_seen": "2026-04-28",
     "posts": [
@@ -268,15 +271,15 @@
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
-      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us"
+      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "published": {
-    "count": 12,
+    "count": 13,
     "first_seen": "2026-03-14",
     "last_seen": "2026-04-28",
     "posts": [
-      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
       "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field",
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
@@ -285,7 +288,8 @@
       "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati",
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
       "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter",
-      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us"
+      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "march": {
@@ -487,11 +491,12 @@
     ]
   },
   "nemotron": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-20",
-    "last_seen": "2026-03-20",
+    "last_seen": "2026-04-28",
     "posts": [
-      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "safety": {
@@ -503,11 +508,12 @@
     ]
   },
   "multimodal": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-20",
-    "last_seen": "2026-03-20",
+    "last_seen": "2026-04-28",
     "posts": [
-      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "multilingual": {
@@ -751,7 +757,7 @@
     ]
   },
   "april": {
-    "count": 7,
+    "count": 8,
     "first_seen": "2026-04-01",
     "last_seen": "2026-04-28",
     "posts": [
@@ -761,7 +767,8 @@
       "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati",
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
       "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter",
-      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us"
+      "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "ramzi": {
@@ -966,12 +973,13 @@
     ]
   },
   "agents": {
-    "count": 2,
+    "count": 3,
     "first_seen": "2026-04-15",
-    "last_seen": "2026-04-17",
+    "last_seen": "2026-04-28",
     "posts": [
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
-      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati"
+      "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati",
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   },
   "ankita": {
@@ -1397,6 +1405,62 @@
     "last_seen": "2026-04-28",
     "posts": [
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us"
+    ]
+  },
+  "nano": {
+    "count": 1,
+    "first_seen": "2026-04-28",
+    "last_seen": "2026-04-28",
+    "posts": [
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
+    ]
+  },
+  "omni": {
+    "count": 1,
+    "first_seen": "2026-04-28",
+    "last_seen": "2026-04-28",
+    "posts": [
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
+    ]
+  },
+  "long-context": {
+    "count": 1,
+    "first_seen": "2026-04-28",
+    "last_seen": "2026-04-28",
+    "posts": [
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
+    ]
+  },
+  "intelligence": {
+    "count": 1,
+    "first_seen": "2026-04-28",
+    "last_seen": "2026-04-28",
+    "posts": [
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
+    ]
+  },
+  "documents": {
+    "count": 1,
+    "first_seen": "2026-04-28",
+    "last_seen": "2026-04-28",
+    "posts": [
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
+    ]
+  },
+  "audio": {
+    "count": 1,
+    "first_seen": "2026-04-28",
+    "last_seen": "2026-04-28",
+    "posts": [
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
+    ]
+  },
+  "video": {
+    "count": 1,
+    "first_seen": "2026-04-28",
+    "last_seen": "2026-04-28",
+    "posts": [
+      "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
     ]
   }
 }

@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-28T16:31:03+00:00",
+    "pages_attempted": 42,
+    "pages_succeeded": 1,
+    "success_rate": 0.02,
+    "post_written": true,
+    "post_slug": "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte"
+  },
+  {
     "timestamp": "2026-04-28T12:04:12+00:00",
     "pages_attempted": 41,
     "pages_succeeded": 0,
@@ -785,14 +793,6 @@
   },
   {
     "timestamp": "2026-04-22T09:55:33+00:00",
-    "pages_attempted": 43,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
-  },
-  {
-    "timestamp": "2026-04-22T08:02:51+00:00",
     "pages_attempted": 43,
     "pages_succeeded": 0,
     "success_rate": 0.0,
