@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-27T08:31:28.040240+00:00",
+  "generated": "2026-04-28T08:29:43.112614+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -22,8 +22,8 @@
     "published",
     "enterprise",
     "article",
-    "march",
     "april",
+    "march",
     "nvidia",
     "robotics",
     "dataset",
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/beyond"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.0
+  "run_success_rate_7d": 0.02
 }
