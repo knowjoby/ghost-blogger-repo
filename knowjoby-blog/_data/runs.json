@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-05-06T19:57:25+00:00",
+    "pages_attempted": 42,
+    "pages_succeeded": 1,
+    "success_rate": 0.02,
+    "post_written": true,
+    "post_slug": "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl"
+  },
+  {
     "timestamp": "2026-05-06T17:49:09+00:00",
     "pages_attempted": 42,
     "pages_succeeded": 0,
@@ -785,14 +793,6 @@
   },
   {
     "timestamp": "2026-04-29T23:40:53+00:00",
-    "pages_attempted": 42,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
-  },
-  {
-    "timestamp": "2026-04-29T22:42:08+00:00",
     "pages_attempted": 42,
     "pages_succeeded": 0,
     "success_rate": 0.0,
