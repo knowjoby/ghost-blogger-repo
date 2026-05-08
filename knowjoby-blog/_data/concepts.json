@@ -261,11 +261,10 @@
     ]
   },
   "article": {
-    "count": 12,
+    "count": 13,
     "first_seen": "2026-03-14",
     "last_seen": "2026-05-08",
     "posts": [
-      "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
@@ -274,15 +273,15 @@
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
       "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required",
-      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity",
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
     ]
   },
   "published": {
-    "count": 16,
+    "count": 17,
     "first_seen": "2026-03-14",
     "last_seen": "2026-05-08",
     "posts": [
-      "2026-04-10-ghost-notes-waypoint-1-5-higher-fidelity-interactive-worlds-for-everyday-gpus",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
       "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati",
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
@@ -291,7 +290,8 @@
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
       "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required",
-      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity",
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
     ]
   },
   "march": {
@@ -751,13 +751,14 @@
     ]
   },
   "team": {
-    "count": 3,
+    "count": 4,
     "first_seen": "2026-04-01",
     "last_seen": "2026-05-08",
     "posts": [
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required",
-      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity",
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
     ]
   },
   "april": {
@@ -1604,11 +1605,12 @@
     ]
   },
   "lablab-ai-amd-developer-hackathon": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-05-08",
     "last_seen": "2026-05-08",
     "posts": [
-      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required",
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
     ]
   },
   "pretraining": {
@@ -1713,6 +1715,62 @@
     "last_seen": "2026-05-08",
     "posts": [
       "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "cybersecqwen-4b": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
+    ]
+  },
+  "defensive": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
+    ]
+  },
+  "cyber": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
+    ]
+  },
+  "specialized": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
+    ]
+  },
+  "locally-runnable": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
+    ]
+  },
+  "samuel": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
+    ]
+  },
+  "athena129": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
     ]
   }
 }
