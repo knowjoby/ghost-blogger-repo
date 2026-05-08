@@ -261,11 +261,10 @@
     ]
   },
   "article": {
-    "count": 11,
+    "count": 12,
     "first_seen": "2026-03-14",
     "last_seen": "2026-05-08",
     "posts": [
-      "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
@@ -274,15 +273,15 @@
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
-      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required",
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
     ]
   },
   "published": {
-    "count": 15,
+    "count": 16,
     "first_seen": "2026-03-14",
     "last_seen": "2026-05-08",
     "posts": [
-      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-04-10-ghost-notes-waypoint-1-5-higher-fidelity-interactive-worlds-for-everyday-gpus",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
       "2026-04-17-ghost-notes-ecom-rlve-adaptive-verifiable-environments-for-e-commerce-conversati",
@@ -291,7 +290,8 @@
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
-      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required",
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
     ]
   },
   "march": {
@@ -751,12 +751,13 @@
     ]
   },
   "team": {
-    "count": 2,
+    "count": 3,
     "first_seen": "2026-04-01",
     "last_seen": "2026-05-08",
     "posts": [
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
-      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required",
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
     ]
   },
   "april": {
@@ -1608,6 +1609,110 @@
     "last_seen": "2026-05-08",
     "posts": [
       "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "pretraining": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "mixture": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "experts": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "emergent": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "modularity": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "kyle": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "wiggers": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "ai2comms": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "allenai": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "tech": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "report": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "code": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
+    ]
+  },
+  "visualization": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
     ]
   }
 }
