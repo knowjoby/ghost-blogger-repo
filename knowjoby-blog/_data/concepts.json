@@ -261,11 +261,10 @@
     ]
   },
   "article": {
-    "count": 10,
+    "count": 11,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-07",
+    "last_seen": "2026-05-08",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
@@ -274,15 +273,15 @@
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
-      "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl"
+      "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
     ]
   },
   "published": {
-    "count": 14,
+    "count": 15,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-07",
+    "last_seen": "2026-05-08",
     "posts": [
-      "2026-03-31-ghost-notes-trl-v1-0-post-training-library-built-to-move-with-the-field",
       "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
       "2026-04-10-ghost-notes-waypoint-1-5-higher-fidelity-interactive-worlds-for-everyday-gpus",
       "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
@@ -291,7 +290,8 @@
       "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter",
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
-      "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl"
+      "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
     ]
   },
   "march": {
@@ -751,11 +751,12 @@
     ]
   },
   "team": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-04-01",
-    "last_seen": "2026-04-01",
+    "last_seen": "2026-05-08",
     "posts": [
-      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier"
+      "2026-04-01-ghost-notes-holo3-breaking-the-computer-use-frontier",
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
     ]
   },
   "april": {
@@ -1543,6 +1544,70 @@
     "last_seen": "2026-05-07",
     "posts": [
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl"
+    ]
+  },
+  "medqa": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "fine-tuning": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "clinical": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "rocm": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "cuda": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "required": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "harikrishna": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+    ]
+  },
+  "lablab-ai-amd-developer-hackathon": {
+    "count": 1,
+    "first_seen": "2026-05-08",
+    "last_seen": "2026-05-08",
+    "posts": [
+      "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
     ]
   }
 }

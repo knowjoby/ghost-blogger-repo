@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-05-08T08:12:59+00:00",
+    "pages_attempted": 41,
+    "pages_succeeded": 1,
+    "success_rate": 0.02,
+    "post_written": true,
+    "post_slug": "2026-05-08-ghost-notes-medqa-fine-tuning-a-clinical-ai-on-amd-rocm-no-cuda-required"
+  },
+  {
     "timestamp": "2026-05-08T06:24:29+00:00",
     "pages_attempted": 41,
     "pages_succeeded": 0,
@@ -785,14 +793,6 @@
   },
   {
     "timestamp": "2026-05-01T12:04:30+00:00",
-    "pages_attempted": 42,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
-  },
-  {
-    "timestamp": "2026-05-01T10:55:07+00:00",
     "pages_attempted": 42,
     "pages_succeeded": 0,
     "success_rate": 0.0,
