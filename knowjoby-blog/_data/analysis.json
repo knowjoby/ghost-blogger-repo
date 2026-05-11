@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-10T08:11:50.259430+00:00",
+  "generated": "2026-05-11T09:46:45.094717+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -23,11 +23,11 @@
     "article",
     "enterprise",
     "april",
-    "march",
     "team",
+    "march",
     "nvidia",
-    "agents",
     "lablab-ai-amd-developer-hackathon",
+    "agents",
     "introducing"
   ],
   "concept_gaps": [
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/beyond"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.05
+  "run_success_rate_7d": 0.0619
 }
