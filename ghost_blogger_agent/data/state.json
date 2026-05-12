@@ -1,8 +1,5 @@
 {
   "seen_urls": {
-    "https://lilianweng.github.io/posts/2023-01-10-inference-optimization/": "2026-03-13T18:56:18+00:00",
-    "https://lilianweng.github.io/posts/2022-06-09-vlm/": "2026-03-13T18:56:18+00:00",
-    "https://huggingface.co/blog/ibm-research/itbenchandmast": "2026-03-13T18:56:18+00:00",
     "https://huggingface.co/blog/nvidia/nemo-retriever-agentic-retrieval": "2026-03-13T20:04:47+00:00",
     "https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms": "2026-03-15T18:54:11+00:00",
     "https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics": "2026-03-16T22:44:31+00:00",
@@ -22,7 +19,9 @@
     "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/cybersecqwen-4b": "2026-05-08T17:55:28+00:00",
     "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/oncoagent-official-paper": "2026-05-09T19:36:49+00:00",
     "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck": "2026-05-10T19:48:39+00:00",
-    "https://huggingface.co/blog/amazon/foundation-model-building-blocks": "2026-05-12T00:15:26+00:00"
+    "https://huggingface.co/blog/amazon/foundation-model-building-blocks": "2026-05-12T00:15:26+00:00",
+    "https://lilianweng.github.io/posts/2023-01-10-inference-optimization/": "2026-05-12T19:24:59+00:00",
+    "https://lilianweng.github.io/posts/2022-06-09-vlm/": "2026-05-12T19:24:59+00:00"
   },
-  "last_run_utc": "2026-05-12T17:36:33+00:00"
+  "last_run_utc": "2026-05-12T19:24:59+00:00"
 }
