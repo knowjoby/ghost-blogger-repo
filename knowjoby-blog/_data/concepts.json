@@ -48,19 +48,21 @@
     ]
   },
   "training": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-05-12",
     "posts": [
-      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log",
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
     ]
   },
   "inference": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-05-12",
     "posts": [
-      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log",
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
     ]
   },
   "tasks": {
@@ -112,11 +114,10 @@
     ]
   },
   "enterprise": {
-    "count": 10,
+    "count": 11,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-07",
+    "last_seen": "2026-05-12",
     "posts": [
-      "2026-03-14-ghost-notes-large-transformer-model-inference-optimization-lil-log",
       "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
@@ -125,7 +126,8 @@
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
-      "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl"
+      "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
     ]
   },
   "optimization": {
@@ -261,11 +263,10 @@
     ]
   },
   "article": {
-    "count": 15,
+    "count": 16,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-11",
+    "last_seen": "2026-05-12",
     "posts": [
-      "2026-04-15-ghost-notes-inside-vakra-reasoning-tool-use-and-failure-modes-of-agents",
       "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
@@ -274,15 +275,15 @@
       "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity",
       "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally",
       "2026-05-10-ghost-notes-oncoagent-a-dual-tier-multi-agent-framework-for-privacy-preserving-o",
-      "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on"
+      "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on",
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
     ]
   },
   "published": {
-    "count": 19,
+    "count": 20,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-11",
+    "last_seen": "2026-05-12",
     "posts": [
-      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
       "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter",
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
@@ -291,7 +292,8 @@
       "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity",
       "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally",
       "2026-05-10-ghost-notes-oncoagent-a-dual-tier-multi-agent-framework-for-privacy-preserving-o",
-      "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on"
+      "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on",
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
     ]
   },
   "march": {
@@ -1876,11 +1878,12 @@
     ]
   },
   "building": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-05-11",
-    "last_seen": "2026-05-11",
+    "last_seen": "2026-05-12",
     "posts": [
-      "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on"
+      "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on",
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
     ]
   },
   "manufacturability": {
@@ -1937,6 +1940,78 @@
     "last_seen": "2026-05-11",
     "posts": [
       "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on"
+    ]
+  },
+  "blocks": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "foundation": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "amazon": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "keita": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "watanabe": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "keitawatanabe": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "pavel": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "belevich": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+    ]
+  },
+  "pbelevich": {
+    "count": 1,
+    "first_seen": "2026-05-12",
+    "last_seen": "2026-05-12",
+    "posts": [
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
     ]
   }
 }
