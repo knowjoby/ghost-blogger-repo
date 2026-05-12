@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-11T09:46:45.094717+00:00",
+  "generated": "2026-05-12T08:44:29.537181+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -28,7 +28,7 @@
     "nvidia",
     "lablab-ai-amd-developer-hackathon",
     "agents",
-    "introducing"
+    "training"
   ],
   "concept_gaps": [
     "text",
@@ -37,8 +37,6 @@
     "quantization",
     "image",
     "language",
-    "training",
-    "inference",
     "tasks",
     "information",
     "memory",
@@ -50,7 +48,9 @@
     "pruning",
     "sparsity",
     "improvement",
-    "beyond"
+    "beyond",
+    "semantic",
+    "similarity"
   ],
   "suggested_seed_urls": [
     "https://en.wikipedia.org/wiki/text",
@@ -59,8 +59,6 @@
     "https://en.wikipedia.org/wiki/quantization",
     "https://en.wikipedia.org/wiki/image",
     "https://en.wikipedia.org/wiki/language",
-    "https://en.wikipedia.org/wiki/training",
-    "https://en.wikipedia.org/wiki/inference",
     "https://en.wikipedia.org/wiki/tasks",
     "https://en.wikipedia.org/wiki/information",
     "https://en.wikipedia.org/wiki/memory",
@@ -72,8 +70,10 @@
     "https://en.wikipedia.org/wiki/pruning",
     "https://en.wikipedia.org/wiki/sparsity",
     "https://en.wikipedia.org/wiki/improvement",
-    "https://en.wikipedia.org/wiki/beyond"
+    "https://en.wikipedia.org/wiki/beyond",
+    "https://en.wikipedia.org/wiki/semantic",
+    "https://en.wikipedia.org/wiki/similarity"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.0619
+  "run_success_rate_7d": 0.0737
 }
