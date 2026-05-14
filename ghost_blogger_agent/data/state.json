@@ -1,6 +1,5 @@
 {
   "seen_urls": {
-    "https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms": "2026-03-15T18:54:11+00:00",
     "https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics": "2026-03-16T22:44:31+00:00",
     "https://huggingface.co/blog/nvidia/nemotron-3-content-safety": "2026-03-20T17:05:48+00:00",
     "https://huggingface.co/blog/trl-v1": "2026-03-31T14:19:57+00:00",
@@ -20,7 +19,8 @@
     "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck": "2026-05-10T19:48:39+00:00",
     "https://huggingface.co/blog/amazon/foundation-model-building-blocks": "2026-05-12T00:15:26+00:00",
     "https://lilianweng.github.io/posts/2023-01-10-inference-optimization/": "2026-05-12T19:24:59+00:00",
-    "https://lilianweng.github.io/posts/2022-06-09-vlm/": "2026-05-12T19:24:59+00:00"
+    "https://lilianweng.github.io/posts/2022-06-09-vlm/": "2026-05-12T19:24:59+00:00",
+    "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2": "2026-05-14T18:59:53+00:00"
   },
-  "last_run_utc": "2026-05-14T16:54:58+00:00"
+  "last_run_utc": "2026-05-14T18:59:53+00:00"
 }

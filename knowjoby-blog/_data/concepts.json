@@ -128,11 +128,10 @@
     ]
   },
   "enterprise": {
-    "count": 11,
+    "count": 12,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-12",
+    "last_seen": "2026-05-15",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
       "2026-03-16-ghost-notes-bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla-fin",
       "2026-03-17-ghost-notes-the-first-healthcare-robotics-dataset-and-foundational-physical-ai-m",
       "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
@@ -141,7 +140,8 @@
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
-      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws",
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
     ]
   },
   "optimization": {
@@ -266,11 +266,12 @@
     ]
   },
   "retrieval": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-03-14",
+    "last_seen": "2026-05-15",
     "posts": [
-      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener"
+      "2026-03-14-ghost-notes-beyond-semantic-similarity-introducing-nvidia-nemo-retriever-s-gener",
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
     ]
   },
   "pipeline": {
@@ -282,11 +283,10 @@
     ]
   },
   "article": {
-    "count": 16,
+    "count": 17,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-12",
+    "last_seen": "2026-05-15",
     "posts": [
-      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
@@ -295,15 +295,15 @@
       "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally",
       "2026-05-10-ghost-notes-oncoagent-a-dual-tier-multi-agent-framework-for-privacy-preserving-o",
       "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on",
-      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws",
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
     ]
   },
   "published": {
-    "count": 20,
+    "count": 21,
     "first_seen": "2026-03-14",
-    "last_seen": "2026-05-12",
+    "last_seen": "2026-05-15",
     "posts": [
-      "2026-04-27-ghost-notes-how-to-build-scalable-web-apps-with-openai-s-privacy-filter",
       "2026-04-28-ghost-notes-adaptive-ultrasound-imaging-with-physics-informed-nv-raw2insights-us",
       "2026-04-28-ghost-notes-introducing-nvidia-nemotron-3-nano-omni-long-context-multimodal-inte",
       "2026-05-07-ghost-notes-vllm-v0-to-v1-correctness-before-corrections-in-rl",
@@ -312,7 +312,8 @@
       "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally",
       "2026-05-10-ghost-notes-oncoagent-a-dual-tier-multi-agent-framework-for-privacy-preserving-o",
       "2026-05-11-ghost-notes-machinacheck-building-a-multi-agent-cnc-manufacturability-system-on",
-      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws"
+      "2026-05-12-ghost-notes-building-blocks-for-foundation-model-training-and-inference-on-aws",
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
     ]
   },
   "march": {
@@ -540,11 +541,12 @@
     ]
   },
   "multilingual": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-03-20",
-    "last_seen": "2026-03-20",
+    "last_seen": "2026-05-15",
     "posts": [
-      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat"
+      "2026-03-20-ghost-notes-nemotron-3-content-safety-4b-multimodal-multilingual-content-moderat",
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
     ]
   },
   "moderation": {
@@ -1188,11 +1190,12 @@
     ]
   },
   "open": {
-    "count": 1,
+    "count": 2,
     "first_seen": "2026-04-17",
-    "last_seen": "2026-04-17",
+    "last_seen": "2026-05-15",
     "posts": [
-      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots"
+      "2026-04-17-ghost-notes-nvidia-isaac-gr00t-n1-7-open-reasoning-vla-model-for-humanoid-robots",
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
     ]
   },
   "humanoid": {
@@ -2039,6 +2042,94 @@
     "last_seen": "2026-05-13",
     "posts": [
       "2026-05-13-ghost-notes-large-transformer-model-inference-optimization-lil-log"
+    ]
+  },
+  "granite": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "embedding": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "apache": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "embeddings": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "context": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "sub-100m": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "quality": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "radu": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "florian": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "hansolosan": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+    ]
+  },
+  "ibm-granite": {
+    "count": 1,
+    "first_seen": "2026-05-15",
+    "last_seen": "2026-05-15",
+    "posts": [
+      "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
     ]
   }
 }

@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-05-14T18:59:53+00:00",
+    "pages_attempted": 39,
+    "pages_succeeded": 1,
+    "success_rate": 0.03,
+    "post_written": true,
+    "post_slug": "2026-05-15-ghost-notes-granite-embedding-multilingual-r2-open-apache-2-0-multilingual-embed"
+  },
+  {
     "timestamp": "2026-05-14T16:54:58+00:00",
     "pages_attempted": 39,
     "pages_succeeded": 0,
@@ -785,14 +793,6 @@
   },
   {
     "timestamp": "2026-05-06T23:31:03+00:00",
-    "pages_attempted": 41,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
-  },
-  {
-    "timestamp": "2026-05-06T22:27:29+00:00",
     "pages_attempted": 41,
     "pages_succeeded": 0,
     "success_rate": 0.0,
