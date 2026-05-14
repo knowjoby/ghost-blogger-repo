@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-13T08:48:50.628381+00:00",
+  "generated": "2026-05-14T08:41:40.700562+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/optimizations"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.086
+  "run_success_rate_7d": 0.0769
 }
