@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-14T08:41:40.700562+00:00",
+  "generated": "2026-05-15T08:52:20.260164+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -38,7 +38,6 @@
     "retriever",
     "generalizable",
     "agentic",
-    "retrieval",
     "pipeline",
     "radek",
     "osmulski",
@@ -50,7 +49,8 @@
     "fine",
     "tuning",
     "device",
-    "optimizations"
+    "optimizations",
+    "gaetan"
   ],
   "suggested_seed_urls": [
     "https://en.wikipedia.org/wiki/beyond",
@@ -60,7 +60,6 @@
     "https://en.wikipedia.org/wiki/retriever",
     "https://en.wikipedia.org/wiki/generalizable",
     "https://en.wikipedia.org/wiki/agentic",
-    "https://en.wikipedia.org/wiki/retrieval",
     "https://en.wikipedia.org/wiki/pipeline",
     "https://en.wikipedia.org/wiki/radek",
     "https://en.wikipedia.org/wiki/osmulski",
@@ -72,8 +71,9 @@
     "https://en.wikipedia.org/wiki/fine",
     "https://en.wikipedia.org/wiki/tuning",
     "https://en.wikipedia.org/wiki/device",
-    "https://en.wikipedia.org/wiki/optimizations"
+    "https://en.wikipedia.org/wiki/optimizations",
+    "https://en.wikipedia.org/wiki/gaetan"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.0769
+  "run_success_rate_7d": 0.0795
 }
