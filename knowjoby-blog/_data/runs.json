@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-05-16T12:47:35+00:00",
+    "pages_attempted": 38,
+    "pages_succeeded": 0,
+    "success_rate": 0.0,
+    "post_written": false,
+    "post_slug": null
+  },
+  {
     "timestamp": "2026-05-16T11:39:58+00:00",
     "pages_attempted": 38,
     "pages_succeeded": 0,
@@ -790,13 +798,5 @@
     "success_rate": 0.03,
     "post_written": true,
     "post_slug": "2026-05-08-ghost-notes-emo-pretraining-mixture-of-experts-for-emergent-modularity"
-  },
-  {
-    "timestamp": "2026-05-08T14:59:59+00:00",
-    "pages_attempted": 40,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
   }
 ]
