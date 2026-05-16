@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-05-16T15:37:01+00:00",
+    "pages_attempted": 38,
+    "pages_succeeded": 0,
+    "success_rate": 0.0,
+    "post_written": false,
+    "post_slug": null
+  },
+  {
     "timestamp": "2026-05-16T14:25:44+00:00",
     "pages_attempted": 38,
     "pages_succeeded": 0,
@@ -790,13 +798,5 @@
     "success_rate": 0.0,
     "post_written": false,
     "post_slug": null
-  },
-  {
-    "timestamp": "2026-05-08T17:55:28+00:00",
-    "pages_attempted": 40,
-    "pages_succeeded": 1,
-    "success_rate": 0.03,
-    "post_written": true,
-    "post_slug": "2026-05-08-ghost-notes-cybersecqwen-4b-why-defensive-cyber-needs-small-specialized-locally"
   }
 ]
