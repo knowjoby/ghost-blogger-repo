@@ -1,32 +1,32 @@
 {
-  "last_reflection": "2026-05-10T09:27:25.987348+00:00",
+  "last_reflection": "2026-05-17T09:46:11.275302+00:00",
   "reflection_period": {
-    "start": "2026-05-03",
-    "end": "2026-05-10"
+    "start": "2026-05-10",
+    "end": "2026-05-17"
   },
   "top_concepts": [
     {
       "term": "published",
-      "count": 18
+      "count": 21
     },
     {
       "term": "article",
-      "count": 14
+      "count": 17
     },
     {
       "term": "enterprise",
-      "count": 10
+      "count": 12
     },
     {
       "term": "april",
       "count": 8
     },
     {
-      "term": "march",
-      "count": 5
+      "term": "team",
+      "count": 6
     },
     {
-      "term": "team",
+      "term": "march",
       "count": 5
     },
     {
@@ -34,17 +34,17 @@
       "count": 4
     },
     {
-      "term": "agents",
-      "count": 3
-    },
-    {
       "term": "lablab-ai-amd-developer-hackathon",
+      "count": 4
+    },
+    {
+      "term": "training",
       "count": 3
     },
     {
-      "term": "introducing",
-      "count": 2
+      "term": "inference",
+      "count": 3
     }
   ],
-  "post_count": 37
+  "post_count": 42
 }
