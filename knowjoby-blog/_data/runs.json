@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-05-17T17:31:22+00:00",
+    "pages_attempted": 38,
+    "pages_succeeded": 0,
+    "success_rate": 0.0,
+    "post_written": false,
+    "post_slug": null
+  },
+  {
     "timestamp": "2026-05-17T16:15:24+00:00",
     "pages_attempted": 38,
     "pages_succeeded": 0,
@@ -790,13 +798,5 @@
     "success_rate": 0.03,
     "post_written": true,
     "post_slug": "2026-05-10-ghost-notes-oncoagent-a-dual-tier-multi-agent-framework-for-privacy-preserving-o"
-  },
-  {
-    "timestamp": "2026-05-09T18:10:28+00:00",
-    "pages_attempted": 39,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
   }
 ]
