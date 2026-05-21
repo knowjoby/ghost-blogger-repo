@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-05-21T20:23:53+00:00",
+    "pages_attempted": 40,
+    "pages_succeeded": 0,
+    "success_rate": 0.0,
+    "post_written": false,
+    "post_slug": null
+  },
+  {
     "timestamp": "2026-05-21T18:25:08+00:00",
     "pages_attempted": 40,
     "pages_succeeded": 0,
@@ -790,13 +798,5 @@
     "success_rate": 0.0,
     "post_written": false,
     "post_slug": null
-  },
-  {
-    "timestamp": "2026-05-12T19:24:59+00:00",
-    "pages_attempted": 41,
-    "pages_succeeded": 2,
-    "success_rate": 0.05,
-    "post_written": true,
-    "post_slug": "2026-05-13-ghost-notes-large-transformer-model-inference-optimization-lil-log"
   }
 ]
