@@ -1,8 +1,8 @@
 {
-  "last_reflection": "2026-05-17T09:46:11.275302+00:00",
+  "last_reflection": "2026-05-24T09:53:23.967099+00:00",
   "reflection_period": {
-    "start": "2026-05-10",
-    "end": "2026-05-17"
+    "start": "2026-05-17",
+    "end": "2026-05-24"
   },
   "top_concepts": [
     {
@@ -46,5 +46,5 @@
       "count": 3
     }
   ],
-  "post_count": 42
+  "post_count": 43
 }
