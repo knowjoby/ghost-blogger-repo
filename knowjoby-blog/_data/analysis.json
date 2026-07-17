@@ -1,13 +1,13 @@
 {
-  "generated": "2026-07-16T08:18:16.373245+00:00",
+  "generated": "2026-07-17T08:14:01.224690+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
       "status_code": 200
     },
     "https://huggingface.co/blog/feed.xml": {
-      "reachable": false,
-      "status_code": 0
+      "reachable": true,
+      "status_code": 200
     },
     "https://arxiv.org/rss/cs.AI": {
       "reachable": true,
@@ -74,8 +74,6 @@
     "https://en.wikipedia.org/wiki/optimizations",
     "https://en.wikipedia.org/wiki/gaetan"
   ],
-  "suggested_feed_removes": [
-    "https://huggingface.co/blog/feed.xml"
-  ],
-  "run_success_rate_7d": 0.0109
+  "suggested_feed_removes": [],
+  "run_success_rate_7d": 0.0103
 }
