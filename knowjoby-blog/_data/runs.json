@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-08-12T12:35:38+00:00",
+    "pages_attempted": 49,
+    "pages_succeeded": 0,
+    "success_rate": 0.0,
+    "post_written": false,
+    "post_slug": null
+  },
+  {
     "timestamp": "2026-08-12T11:34:44+00:00",
     "pages_attempted": 49,
     "pages_succeeded": 0,
@@ -785,14 +793,6 @@
   },
   {
     "timestamp": "2026-08-08T05:59:59+00:00",
-    "pages_attempted": 49,
-    "pages_succeeded": 0,
-    "success_rate": 0.0,
-    "post_written": false,
-    "post_slug": null
-  },
-  {
-    "timestamp": "2026-08-08T05:08:29+00:00",
     "pages_attempted": 49,
     "pages_succeeded": 0,
     "success_rate": 0.0,
