@@ -1,8 +1,8 @@
 {
-  "last_reflection": "2026-08-23T08:28:00.546874+00:00",
+  "last_reflection": "2026-08-30T13:34:39.163645+00:00",
   "reflection_period": {
-    "start": "2026-08-16",
-    "end": "2026-08-23"
+    "start": "2026-08-23",
+    "end": "2026-08-30"
   },
   "top_concepts": [
     {
@@ -46,5 +46,5 @@
       "count": 4
     }
   ],
-  "post_count": 57
+  "post_count": 58
 }
