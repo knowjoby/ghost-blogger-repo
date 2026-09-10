@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T10:57:06.978796+00:00",
+  "generated": "2026-09-10T10:53:48.744207+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -24,11 +24,11 @@
     "enterprise",
     "april",
     "team",
-    "march",
     "training",
     "inference",
-    "nvidia",
-    "lablab-ai-amd-developer-hackathon"
+    "march",
+    "text",
+    "visual"
   ],
   "concept_gaps": [
     "beyond",
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/gaetan"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.0
+  "run_success_rate_7d": 0.02
 }
