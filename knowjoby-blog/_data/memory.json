@@ -1,8 +1,8 @@
 {
-  "last_reflection": "2026-09-06T11:58:12.019527+00:00",
+  "last_reflection": "2026-09-13T13:07:15.401743+00:00",
   "reflection_period": {
-    "start": "2026-08-30",
-    "end": "2026-09-06"
+    "start": "2026-09-06",
+    "end": "2026-09-13"
   },
   "top_concepts": [
     {
@@ -26,25 +26,25 @@
       "count": 6
     },
     {
+      "term": "training",
+      "count": 5
+    },
+    {
+      "term": "inference",
+      "count": 5
+    },
+    {
       "term": "march",
       "count": 5
     },
     {
-      "term": "training",
+      "term": "text",
       "count": 4
     },
     {
-      "term": "inference",
-      "count": 4
-    },
-    {
-      "term": "nvidia",
-      "count": 4
-    },
-    {
-      "term": "lablab-ai-amd-developer-hackathon",
+      "term": "visual",
       "count": 4
     }
   ],
-  "post_count": 59
+  "post_count": 61
 }
