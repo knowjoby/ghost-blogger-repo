@@ -1,8 +1,8 @@
 {
-  "last_reflection": "2026-11-08T14:46:33.415937+00:00",
+  "last_reflection": "2026-11-15T15:22:52.027794+00:00",
   "reflection_period": {
-    "start": "2026-11-01",
-    "end": "2026-11-08"
+    "start": "2026-11-08",
+    "end": "2026-11-15"
   },
   "top_concepts": [
     {
@@ -22,29 +22,29 @@
       "count": 8
     },
     {
+      "term": "training",
+      "count": 6
+    },
+    {
+      "term": "inference",
+      "count": 6
+    },
+    {
       "term": "team",
       "count": 6
     },
     {
-      "term": "training",
-      "count": 5
-    },
-    {
-      "term": "inference",
-      "count": 5
-    },
-    {
-      "term": "march",
-      "count": 5
-    },
-    {
       "term": "text",
-      "count": 4
+      "count": 5
     },
     {
       "term": "visual",
-      "count": 4
+      "count": 5
+    },
+    {
+      "term": "transformer",
+      "count": 5
     }
   ],
-  "post_count": 69
+  "post_count": 71
 }
