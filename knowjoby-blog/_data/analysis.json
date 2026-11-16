@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-15T13:39:06.864137+00:00",
+  "generated": "2026-11-16T15:11:04.406833+00:00",
   "feed_health": {
     "https://lilianweng.github.io/index.xml": {
       "reachable": true,
@@ -75,5 +75,5 @@
     "https://en.wikipedia.org/wiki/gaetan"
   ],
   "suggested_feed_removes": [],
-  "run_success_rate_7d": 0.0385
+  "run_success_rate_7d": 0.0
 }
